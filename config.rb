@@ -17,15 +17,24 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.branch = 'master'
+  deploy.build_before = true
+end
+
+activate :directory_indexes
 
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
 end
 
+
 ###
 # Helpers
 ###
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -40,10 +49,6 @@ configure :build do
   # activate :minify_css
 
   # Minify Javascript on build
-<<<<<<< HEAD
   activate :minify_javascript
 
-=======
-  # activate :minify_javascript
->>>>>>> 3704646ad3760d3f958c1e3235d4fbf5d032178b
 end
