@@ -1,0 +1,44 @@
+body {
+
+  background: #eaeaea;
+  margin: 0;
+  padding: 0;
+}
+
+audio {
+  width: 100%;
+}
+
+.left-col {
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  float: left;
+  margin: 0 10px 0 0;
+  background: black;
+  border-right: 10px solid #ff9900;
+  box-shadow: 5px 0px 15px rgba(0,0,0,0.5);
+  overflow-y: scroll;
+}
+
+.right-col {
+  width: 70%;
+  float: right;
+}
+
+.track-name {
+  margin-top: 0px;
+  color: #fff;
+  border-top: 2px solid #ff9900;
+  padding-top: 15px;
+  text-shadow: 1px 1px #ff9900;
+  font: bold 18px "Orbitron", "Arial";
+  text-align: center;
+}
+
+#stopwatch {
+  background: #000;
+  color: #eeff00;
+  text-align: center;
+  font: 30px "Orbitron", "Arial";
+}
