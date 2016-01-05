@@ -20,7 +20,7 @@ function scrollFooter(scrollY, heightFooter)
 $(window).load(function(){
     var windowHeight        = $(window).height(),
         footerHeight        = $('footer').height(),
-        heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 540;
+        heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height()) - 520;
 
     // Definindo o tamanho do elemento pra animar
     $('#scroll-animate, #scroll-animate-main').css({
