@@ -5,10 +5,10 @@ build:
     - bundle install
     # Execute a custom script step.
     - script:
-      name: middleman build
+      name: middleman deploy
       code: middleman build
-deploy :
-  steps :
-    - script:
-        name: middleman deploy
-        code: middleman deploy
+deploy:
+  steps:
+    - steve970/steve970.github.io:
+        token: $GH_TOKEN
+        basedir: master
