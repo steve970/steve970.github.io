@@ -7,8 +7,3 @@ build:
     - script:
       name: middleman deploy
       code: middleman deploy
-deploy:
-  steps:
-    - steve970/steve970.github.io:
-        token: $GH_TOKEN
-        basedir: master
