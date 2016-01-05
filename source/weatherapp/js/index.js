@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "GET",
-    url: "http://jsonplaceholder.typicode.com/posts/1",
+    url: "https://jsonplaceholder.typicode.com/posts/1",
     datatype: "json",
     success: function(data) {
       console.log(data.title);
@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "GET",
-    url: "http://jsonip.com",
+    url: "https://jsonip.com",
     dataType: "json",
     success: function(data) {
       var ipAddress = data.ip;
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   $.ajax({
     type: "GET",
-    url: "http://www.flickr.com/services/feeds/photos_public.gne?tags=puggle&format=json",
+    url: "https://www.flickr.com/services/feeds/photos_public.gne?tags=puggle&format=json",
     dataType: "jsonp",
     data: {format: "json"}
   })
@@ -53,7 +53,7 @@ $(document).ready(function () {
       $.ajax({
         type: "GET",
         dataType: "jsonp",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=" +"#{ENV['OPENWEATHER_API']}",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=" +"#{ENV['OPENWEATHER_API']}",
         success: function(data) {
           var weather = data.weather[0].main;
           if ( weather === "Cloudy" || weather == "Clouds")
