@@ -12,4 +12,3 @@ deploy:
     - steve970/steve970.github.io:
         token: $GH_TOKEN
         basedir: master
-        domain: luke.vivier.ca

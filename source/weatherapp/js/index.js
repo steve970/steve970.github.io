@@ -53,7 +53,7 @@ $(document).ready(function () {
       $.ajax({
         type: "GET",
         dataType: "jsonp",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=fe23f4306fae4f6fa445cc278b5e5069",
+        url: "http://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=" + ENV['API_OPENWEATHER'],
         success: function(data) {
           var weather = data.weather[0].main;
           if ( weather === "Cloudy" || weather == "Clouds")
