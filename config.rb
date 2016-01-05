@@ -40,10 +40,6 @@ configure :build do
   # activate :minify_css
 
   # Minify Javascript on build
-<<<<<<< HEAD
   activate :minify_javascript
 
-=======
-  # activate :minify_javascript
->>>>>>> 3704646ad3760d3f958c1e3235d4fbf5d032178b
 end
