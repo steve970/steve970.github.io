@@ -44,7 +44,7 @@ $(document).ready(function () {
       $.ajax({
         type: "GET",
         dataType: "jsonp",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=" +"#{ENV['OPENWEATHER_API']}",
+        url: "http://api.openweathermap.org/data/2.5/weather?q=" + place + "&APPID=<%= data.key['api'] %>",
         success: function(data) {
           var weather = data.weather[0].main;
           if ( weather === "Cloudy" || weather == "Clouds")
