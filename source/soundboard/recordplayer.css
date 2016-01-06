@@ -1,0 +1,52 @@
+.record {
+  background: url(http://i.imgur.com/FKRMMap.gif) center center #222222;
+  background-size: cover;
+  border: #000 solid 35px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #181c1f,     0 0 0 11px #080b12,     0 0 0 20px #181c1f,     0 0 0 21px #080b12,     0 0 0 30px #181c1f,     0 0 0 31px #080b12,     0 0 0 40px #181c1f,     0 0 0 41px #080b12,     0 0 0 50px #181c1f,     0 0 0 51px #080b12,     0 0 0 60px #181c1f,     0 0 0 61px #080b12,     0 0 0 70px #181c1f,     0 0 0 71px #080b12,     0 0 0 80px #181c1f,     0 0 0 81px #080b12,     0 0 0 90px #181c1f,     0 0 0 110px #080b12;
+  height: 200px;
+  margin: 200px auto;
+  width: 200px;
+}
+.record:hover {
+  cursor: pointer;
+}
+
+.rotate {
+    -webkit-animation: infinite-spinning linear 3s infinite;
+    -moz-animation: infinite-spinning linear 3s infinite;
+    -o-animation: infinite-spinning linear 3s infinite;
+    animation: infinite-spinning linear 3s infinite;
+}
+
+@-webkit-keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); }
+}
+
+@-moz-keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); }
+}
+
+@-o-keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); }
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); }
+}
