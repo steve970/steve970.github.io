@@ -1,3 +1,11 @@
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'master'
+  deploy.build_before = true
+end
+
+activate :directory_indexes
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -17,13 +25,6 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 # General configuration
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.branch = 'gh-pages'
-  deploy.build_before = true
-end
-
-activate :directory_indexes
 
 # Reload the browser automatically whenever files change
 configure :development do
