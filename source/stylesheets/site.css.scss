@@ -21,7 +21,7 @@ body {
 #heightPage,
 #heightScroll
 {
-  width: 10px;
+  width: .625em;
   top: 0;
   position: absolute;
   z-index: 99;
@@ -55,7 +55,7 @@ footer
   width: 100%;
   height: 100%;
   background: grey;
-  bottom: 200px;
+  bottom: 12.5em;
   position: fixed;
   z-index: -1;
 }
@@ -63,9 +63,9 @@ footer
 .slider
 {
   height: 50%;
-  min-height: 500px;
-  // padding-top: 50px;
-  padding-bottom: 10px;
+  min-height: 31.25em;
+  // padding-top: 3.125em;
+  padding-bottom: .625em;
   background: #ededed;
   position: relative;
   z-index: 1;
@@ -73,18 +73,18 @@ footer
 
 .wrapper-parallax {
   margin-top: 100%;
-  margin-bottom: 300px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 18.75em;
+  box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   width: 100%;
   height: 20%;
-  padding-left: 100px;
+  padding-left: 6.25em;
   margin: 0;
   text-transform: uppercase;
   text-align: left;
-  font-size: 70px;
+  font-size: 4.375em;
   color: #fff;
 }
 
@@ -92,21 +92,21 @@ header h1{}
 
 .content{
   width: 80%;
-  margin: 50px 50px 50px 100px;
-  padding-top: 50px;
+  margin: 3.125em 3.125em 3.125em 3.125em;
+  padding-top: 3.125em;
 }
 .content p {
   text-align: left;
-  font-size: 18px;
-  color: #9 99;
+  font-size: 1.125em;
+  color: #999;
 }
 
 .content li{
   width: 100%;
-  margin: 0 0 10px 100px;
+  margin: 0 0 .625em 6.25em;
   text-transform: uppercase;
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #999;
 }
 
@@ -128,44 +128,44 @@ footer,
 }
 
 .linked_in {
-  width: 25px;
+  width: 1.5625em;
 }
 
 .github {
-  width: 25px;
+  width: 1.5625em;
 }
 
 #wrapper {
   width: 90%;
-  max-width: 1100px;
-  min-width: 800px;
-  margin: 50px auto 50px 0px;
+  max-width: 68.75em;
+  min-width: 50em;
+  margin: 3.125em auto 3.125em 0;
 }
 
 #columns {
-  -webkit-column-count: 3;
-  -webkit-column-gap: 10px;
+  -webkit-column-count: 1;
+  -webkit-column-gap: .625em;
   -webkit-column-fill: auto;
-  -moz-column-count: 3;
-  -moz-column-gap: 10px;
+  -moz-column-count: 1;
+  -moz-column-gap: .625em;
   -moz-column-fill: auto;
-  column-count: 3;
-  column-gap: 15px;
+  column-count: 1;
+  column-gap: .9375em;
   column-fill: auto;
 }
 
 .pin {
   display: inline-block;
   background: #FEFEFE;
-  border: 2px solid #FAFAFA;
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(34, 25, 25, 0.4);
-  margin: 0 2px 15px;
+  border: .125em solid #FAFAFA;
+  border-radius: .3125em;
+  box-shadow: 0 .0625em .0625em rgba(34, 25, 25, 0.4);
+  margin: 0 .125em .9375em;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
-  padding: 15px;
-  padding-bottom: 5px;
+  padding: .9375em;
+  padding-bottom: .3125em;
   background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
   opacity: 1;
 
@@ -177,23 +177,23 @@ footer,
 
 .pin img {
   width: 100%;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 15px;
-  margin-bottom: 5px;
+  border-bottom: .0625em solid #ccc;
+  padding-bottom: .938em;
+  margin-bottom: .3125em;
 }
 
 .pin p {
-  font-size: 12px;
+  font-size: .75em;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
-@media (min-width: 960px) {
+@media (max-width: 960px) {
   #columns {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
   }
 }
 
