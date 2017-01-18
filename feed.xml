@@ -14,11 +14,13 @@
     <link rel="alternate" href="http://blog.url.com/2017/01/17/my-website-revisted.html"/>
     <id>http://blog.url.com/2017/01/17/my-website-revisted.html</id>
     <published>2017-01-16T17:00:00-07:00</published>
-    <updated>2017-01-17T22:07:41-07:00</updated>
+    <updated>2017-01-17T23:38:07-07:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Mark this as my first official blog post of the New Year 2017.&lt;/p&gt;
+    <content type="html">&lt;h3&gt;My website revisted...&lt;/h3&gt;
+
+&lt;p&gt;Mark this as my first official blog post of the New Year 2017.&lt;/p&gt;
 
 &lt;p&gt;When the new year began, I wanted to re-design and improve my website and one of the features that I wanted to add was a blog where I could talk about what I am learning, the growing pains of being a new developer, small victories, and the joys of my adventures along the way.&lt;/p&gt;
 
