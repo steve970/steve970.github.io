@@ -4,6 +4,8 @@ date: 2017-01-17
 tags: 2017, resume
 ---
 
+<h3>My website revisted...</h3>
+
 Mark this as my first official blog post of the New Year 2017.
 
 When the new year began, I wanted to re-design and improve my website and one of the features that I wanted to add was a blog where I could talk about what I am learning, the growing pains of being a new developer, small victories, and the joys of my adventures along the way.
