@@ -1,0 +1,15 @@
+{
+  "name": "steve970",
+  "version": "2.0.0",
+  "description": "portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config mywebpack.config.js"
+  },
+  "author": "Steve Hirschhorn",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "webpack": "^1.14.0"
+  }
+}
