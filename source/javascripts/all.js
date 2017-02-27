@@ -97,7 +97,7 @@ $( document ).ready( function () {
 
   $( window ).scroll(function() {
     // alert($( window ).scrollTop());
-    if ($( window ).scrollTop() > 130 && $( window ).scrollTop() < 3990 ) {
+    if ($( window ).scrollTop() > 130 && $( window ).scrollTop() < 4290 ) {
       console.log('true')
       $('.navMenu').addClass('fixed');
     } else {
