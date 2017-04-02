@@ -86,7 +86,7 @@ div {
 
 .background {
   height: 100%;
-  background-image: url('../images/journey.jpg');
+  background-image: url('../images/journey-compressor.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -100,7 +100,7 @@ div {
 
 .background1 {
   height: 50em;
-  background-image: url('../images/island1.png');
+  background-image: url('../images/islandbasin-compressor.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -741,6 +741,7 @@ hr {
 }
 
 .gilbert {
+  margin-top: 1.125em;
   object-fit: cover;
 }
 
