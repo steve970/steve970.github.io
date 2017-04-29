@@ -104,7 +104,7 @@ $( document ).ready( function () {
 
   $( window ).scroll(function() {
     console.log($( window ).scrollTop());
-    if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4290 ) {
+    if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4011 ) {
       console.log('true')
       $('.navMenu').addClass('fixed');
     } else {
