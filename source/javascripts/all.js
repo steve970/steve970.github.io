@@ -18,6 +18,13 @@ $( document ).ready( function () {
     return false;
   });
 
+  $("#top").click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
+    return false;
+  })
+
   $("#aboutNav").click(function() {
     $('html, body').animate({
         scrollTop: $('#aboutAnchor').offset().top
@@ -96,8 +103,8 @@ $( document ).ready( function () {
   });
 
   $( window ).scroll(function() {
-    // alert($( window ).scrollTop());
-    if ($( window ).scrollTop() > 130 && $( window ).scrollTop() < 4290 ) {
+    console.log($( window ).scrollTop());
+    if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4290 ) {
       console.log('true')
       $('.navMenu').addClass('fixed');
     } else {

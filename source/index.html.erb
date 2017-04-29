@@ -3,75 +3,67 @@ pageable: true
 per_page: 10
 ---
 
-
 <div>
+  <div name="home" id="home">
+  </div>
   <div class="background">
   </div>
   <div class="content">
     <h1>Hello, I'm</h1>
     <h1>Steve</h1>
-    <div id="anchorArrow" data-id="#aboutAnchor">
-      <a href="#aboutAnchor" class="anchorLink"><p>&#8595;</p></a>
+    <div id="anchorArrow" data-id="#about">
+      <a href="#about" class="anchorLink"><p>&#8595;</p></a>
     </div>
   </div>
-  </div>
-  <div class="navMenu">
-    <div class="row">
-      <nav class="flexcontainer">
-        <div class="col-12">
-          <div class="col-1">
-            <div class="threeLine" id="menu"><p>&#9776;</p></div>
-          </div>
-          <div class="col-3">
-            <div class="navName" id="menu"><p>HELLO, I'M STEVE</p></div>
-          </div>
-          <div class="js">
-            <div class="col-2">
-              <div class="navName" id="menu"><a href="#aboutAnchor" class="anchorLink" id="aboutNav"><p>about me</p></a></div>
-            </div>
-            <div class="col-2">
-              <div class="navName" id="menu"><a href="#workAnchor" class="anchorLink" id="skillNav"><p>skills and experience</p></a></div>
-            </div>
-            <div class="col-2">
-              <div class="navName" id="menu"><a href="#projectAnchor" class="anchorLink" id="projectNav"><p>projects</p></a></div>
-            </div>
-            <div class="col-2">
-              <div class="navName" id="menu"><a href="#contactAnchor" class="anchorLink" id="contactNav"><p>hire me</p></a></div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
   </div>
   <div name="aboutAnchor" id="aboutAnchor" class="about">
+    <div class="navMenu">
+      <div class="row">
+        <nav class="flexcontainer">
+          <div class="col-12">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+              <div class="js">
+                <div class="col-2">
+                  <div class="navName" id="menu"><a href="#" id="top"><p>HELLO, I'M STEVE</p></a></div>
+                </div>
+                <div class="col-2">
+                  <div class="navName" id="menu"><a href="#about" class="anchorLink" id="aboutNav"><p>about me</p></a></div>
+                </div>
+                <div class="col-2">
+                  <div class="navName" id="menu"><a href="#resume" class="anchorLink" id="skillNav"><p>resume</p></a></div>
+                </div>
+                <div class="col-2">
+                  <div class="navName" id="menu"><a href="#projects" class="anchorLink" id="projectNav"><p>projects</p></a></div>
+                </div>
+                <div class="col-2">
+                  <div class="navName" id="menu"><a href="#contactAnchor" class="anchorLink" id="contactNav"><p>hire me</p></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="threeLine" id="menu"><p>&#9776;</p></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="profile col-12">
+      </div>
+    </div>
     <div class="row">
       <div class="profile col-12">
         <div class="col-12">
-          <div class="me col-6">
-            <h1>About Me</h1>
-            <p>My life is one big adventure. Whether it is growing my own food, attempting to climb a mountain, or learning a new programming language, I approach everything with an open mind, a willingness to learn and grow from my experience, and an overall appreciation for life.</p>
-            <p>I'm a fullstack developer with a background in marketing and international business from the <strong>University of Colorado</strong>. My professional experience includes all things print and digital marketing, farm, account/project, and restaurant management.</p>
-            <p>Since pivoting, I completed the Galvanize Full Stack development program and I have been focused primarily in JavaScript and Ruby. I have been exposed to many different technologies and frameworks and am always tinkering around on something in my free time.</p>
-            <p>I like to think I bring a lot to the table. Consider me a fullstack professional.</p>
-          </div>
-          <div class="you col-6">
-            <h1>Five Fun Things</h1>
-            <div class="together">
-              <img class="gilbert" src="/images/gilbert1-compressor.jpg" />
-            </div>
-            <p>I have an adventure buddy, his name is Gilbert.</p>
-            <p>I have circumnavigated the globe.</p>
-            <p>My favorite tomato is the Green Zebra.</p>
-            <p>I helped film a Super Bowl segment. I was the que card guy.</p>
-            <p>I prefer to go fly fishing in the dark...no joke, I have the pictures to prove it.</p>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="about" id="anchorArrow1" data-id="#workAnchor">
-                <a id="arrow" href="#workAnchor" class=""><p class="arrow">&#8595;</p></a>
-              </div>
-            </div>
-          </div>
+          <h1>About Me</h1>
+          <p>My life is one big adventure. Whether it is growing my own food, attempting to climb a mountain, or learning a new programming language, I approach everything with an open mind, a willingness to learn and grow from my experience, and an overall appreciation for life.</p>
+          <p>I'm a fullstack developer with a background in marketing and international business from the <strong>University of Colorado</strong>. My professional experience includes all things print and digital marketing, farm, account/project, and restaurant management.</p>
+          <p>Since pivoting, I completed the Galvanize Full Stack development program and I have been focused primarily in JavaScript and Ruby. I have been exposed to many different technologies and frameworks and am always tinkering around on something in my free time.</p>
+          <p>I like to think I bring a lot to the table. Consider me a fullstack professional.</p>
+        </div>
+        <div class="about" id="anchorArrow1" data-id="#resume">
+          <a id="arrow" href="#resume" class=""><p class="arrow">&#8595;</p></a>
         </div>
       </div>
     </div>
@@ -190,8 +182,8 @@ per_page: 10
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="work" id="anchorArrow2" data-id="#projectAnchor">
-          <a href="#projectAnchor" id="arrow" class="anchorLink"><p class="arrow">&#8595;</p></a>
+        <div class="work" id="anchorArrow2" data-id="#project">
+          <a href="#projects" id="arrow" class="anchorLink"><p class="arrow">&#8595;</p></a>
         </div>
       </div>
     </div>
@@ -199,7 +191,7 @@ per_page: 10
   <div name="projectAnchor" id="projectAnchor" class="projects">
     <div class="row">
       <div class="col-12">
-        <div class="col-12">
+        <div class="col-12 profile">
           <h1>Projects</h1>
           <p>Things I enjoy doing in my free time and want to share with the world.</p>
           <p>(Links to projects coming soon!)</p>
@@ -286,8 +278,8 @@ per_page: 10
     <div class="content1">
       <!-- <p>The biggest adventure you can take is to live the life of your dreams.</p> -->
       <!-- <h1></h1> -->
-      <!-- <div id="anchorArrow" data-id="#aboutAnchor">
-        <a href="#aboutAnchor" class="anchorLink"><p>&#8595;</p></a>
+      <!-- <div id="anchorArrow" data-id="#about">
+        <a href="#about" class="anchorLink"><p>&#8595;</p></a>
       </div> -->
     </div>
   </div>
@@ -320,13 +312,13 @@ per_page: 10
             </div>
             <div class="">
               <div class="col-2">
-                <div class="footerNavName" id="footerMenu"><a href="#aboutAnchor" class="anchorLink" id="footerAboutNav"><p>about me</p></a></div>
+                <div class="footerNavName" id="footerMenu"><a href="#about" class="anchorLink" id="footerAboutNav"><p>about me</p></a></div>
               </div>
               <div class="col-2">
-                <div class="footerNavName" id="footerMenu"><a href="#workAnchor" class="anchorLink" id="footerSkillNav"><p>skills and experience</p></a></div>
+                <div class="footerNavName" id="footerMenu"><a href="#resume" class="anchorLink" id="footerSkillNav"><p>resume</p></a></div>
               </div>
               <div class="col-2">
-                <div class="footerNavName" id="footerMenu"><a href="#projectAnchor" class="anchorLink" id="footerProjectNav"><p>projects</p></a></div>
+                <div class="footerNavName" id="footerMenu"><a href="#projects" class="anchorLink" id="footerProjectNav"><p>projects</p></a></div>
               </div>
             </div>
           </div>
