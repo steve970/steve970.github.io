@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway|Lato:100,300,700" rel="stylesheet">
 
     <%= stylesheet_link_tag :site %>
-    <%= javascript_include_tag :all %>
+
   </head>
 
   <body class="<%= page_classes %>">
     <%= yield %>
+    <%= javascript_include_tag :all %>
   </body>
 </html>
