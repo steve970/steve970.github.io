@@ -565,7 +565,6 @@ a:visited {
 .img {
   height: 22.188em;
   vertical-align: inherit;
-  object-fit: cover;
   transition: .2s; }
 
 .description {
@@ -616,7 +615,6 @@ p.description {
 
 .stateofco .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
@@ -643,7 +641,6 @@ p.description {
 
 .weatherapp .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
@@ -670,7 +667,6 @@ p.description {
 
 .gcamp .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
@@ -697,7 +693,6 @@ p.description {
 
 .soundboard .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
@@ -919,72 +914,5 @@ div#footerMenu.footerNavName p {
   color: #829191;
   text-align: center; }
 
-hr {
-  display: block;
-  height: 0.063em;
-  border: 0;
-  border-top: 0.063em solid #fff; }
-
-.gilbert {
-  margin-top: 1.125em;
-  object-fit: cover; }
-
 .star {
   color: #4C5B61; }
-
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 6.250em;
-  /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */ }
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 1.25em;
-  border: 0.063em solid #888;
-  width: 80%; }
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 1.75em;
-  font-weight: bold; }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer; }
-
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0; }
-  50% {
-    -webkit-transform: scale(0);
-    opacity: 0; }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1; }
-  to {
-    -webkit-transform: scale(1); } }
