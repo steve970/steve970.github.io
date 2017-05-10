@@ -105,44 +105,17 @@ div {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  // width: 100%;
-  // bottom: 0;
-  // position: fixed;
-  // z-index: -1;
-  // min-height: 100%;
 }
 
 .content {
-  // position: absolute;
-  // width: 100%;
   top: 50%;
   left: 50%;
-  // -webkit-transform: translate(-50%, -50%);
-  // transform: translate(-50%, -50%);
-
   margin: 2.125em 3.125em 4.125em 3.125em;
-  // padding-top: 3.125em;
   text-transform: uppercase;
   font-size: 4.375em;
   font-weight: 100;
   color: #E6E0E0;
 }
-
-// .content1 {
-//   // position: absolute;
-//   // width: 100%;
-//   top: 50%;
-//   left: 50%;
-//   // -webkit-transform: translate(-50%, -50%);
-//   // transform: translate(-50%, -50%);
-//
-//   // margin: 3.125em 3.125em 3.125em 3.125em;
-//   padding-top: 6.125em ;
-//   // text-transform: uppercase;
-//   font-size: 4.375em;
-//   font-weight: 100;
-//   color: #E6E0E0;
-// }
 
 a#arrow {
   color: inherit;
@@ -282,7 +255,7 @@ a:visited {
   // width: 100%;
   // display: block;
   vertical-align: inherit;
-  object-fit: cover;
+  // object-fit: cover;
   transition: .2s;
 }
 
@@ -329,7 +302,6 @@ p.description {
 .gmail-cli:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -345,7 +317,6 @@ p.description {
 
 .stateofco .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -361,7 +332,6 @@ p.description {
 .stateofco:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -377,10 +347,10 @@ p.description {
 
 .weatherapp .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+
 }
 
 .weatherapp:hover .img {
@@ -393,7 +363,6 @@ p.description {
 .weatherapp:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -409,7 +378,6 @@ p.description {
 
 .gcamp .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -425,7 +393,6 @@ p.description {
 .gcamp:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -441,7 +408,6 @@ p.description {
 
 .soundboard .img {
   width: 100%;
-  object-fit: cover;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -457,7 +423,6 @@ p.description {
 .soundboard:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -489,7 +454,6 @@ p.description {
 .staytuned:hover .description {
   visibility: visible;
   opacity: 0.7;
-  // transform: translateY(0);
   visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -529,7 +493,6 @@ p.description {
 }
 
 .me {
-  // height: 18.75em;
   text-align: left;
 }
 
@@ -736,77 +699,6 @@ div#footerMenu.footerNavName p {
   text-align: center;
 }
 
-hr {
-  display: block;
-  height: 0.063em;
-  border: 0;
-  border-top: 0.063em solid #fff;
-  // margin: 1em 0;
-  // padding: 0;
-}
-
-.gilbert {
-  margin-top: 1.125em;
-  object-fit: cover;
-}
-
 .star {
   color: #4C5B61;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 6.250em; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 1.25em;
-    border: 0.063em solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 1.75em;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-@-webkit-keyframes welcome {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-   -webkit-transform: scale(0);
-   opacity: 0;
-  }
-  82.5% {
-    -webkit-transform: scale(1.03);
-    -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(1);
-  }
 }

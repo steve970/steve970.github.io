@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Steve Hirschhorn" %></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway|Lato:100,300,700" rel="stylesheet">
+
+
+    <%= stylesheet_link_tag :project %>
+
+  </head>
+
+  <body class="<%= page_classes %>">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="project">
+            <h1>
+              PROJECT NAME: <%= current_page.data.name %>
+            </h1>
+            <h3>
+              <%= current_page.data.summary %>
+            </h3>
+            <p>
+              <%= current_page.data.description %>
+            </p>
+            <h2>
+              <%= current_page.data.tech %>
+            </h2>
+            <div>
+              <a href="<%= current_page.data.repo %>" >
+                <img src="/images/github.png" class="github"/>
+              </a>
+              <% if current_page.data.other %>
+                <a href="<%= current_page.data.other.npm %>">
+                  <img src="/images/npm.svg" class="npm"/>
+                </a>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="showcase">
+            <div class="<%= current_page.data.class %>">
+                <img src="<%= current_page.data.image %>" class="img" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="project-footer">
+            <a href="/" ><p>Back To Homepage</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_include_tag :projects %>
+
+  </body>
+</html>

@@ -2,6 +2,8 @@
 # Page options, layouts, aliases and proxies
 ###
 
+activate :directory_indexes
+
 # Per-page layout changes:
 #
 # With no layout
@@ -11,6 +13,12 @@ page '/*.txt', layout: false
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
+page '/index.html', layout: "layout"
+page '/gmailcli.html', layout: "projectpage"
+page '/weatherapp.html', layout: "projectpage"
+page '/soundboard.html', layout: "projectpage"
+page '/gcamp.html', layout: "projectpage"
+page '/stateofco.html', layout: "projectpage"
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
