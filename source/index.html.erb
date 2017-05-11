@@ -195,83 +195,85 @@ per_page: 10
           <h1>Projects</h1>
           <p>Things I enjoy doing in my free time and want to share with the world.</p>
           <p>(Links to projects coming soon!)</p>
-          <div class="row">
-            <div class="showcase col-3">
-              <div class="gmail-cli">
-                <a href="gmailcli">
-                  <img src="/images/gmail_cli.png" class="img" />
-                  <p class="description">gMail CLI</p>
-                </a>
-              </div>
-            </div>
-            <div class="showcase col-3">
-              <div class="weatherapp">
-                <a href="weatherapp">
-                  <img src="/images/weatherapp.png" class="img" />
-                  <p class="description">
-                    Weather App For Dogs
-                  </p>
-                </a>
-              </div>
-            </div>
-            <div class="showcase col-3">
-              <div class="stateofco">
-                <a href="stateofco">
-                  <img src="/images/CO_logo.jpg" class="img" />
-                  <p class="description">State Of CO</p>
-                </a>
-              </div>
-            </div>
-            <div class="showcase col-3">
-              <div class="gcamp">
-                <a href="gcamp">
-                  <img src="/images/gcamp.png" class="img" />
-                  <p class="description">gCamp</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="showcase col-3">
-              <div class="soundboard">
-                <a href="soundboard">
-                  <img src="/images/soundboardcat.png" class="img" />
-                  <p class="description">Soundboard</p>
-                </a>
-              </div>
-            </div>
-            <div class="showcase col-3">
-              <div class="staytuned">
-                <img src="/images/staytuned.png" class="img" />
-                <p class="description">Stay tuned for Raspberry Pi, angular.js, and wordpress, and CO Open Data projects...</p>
-              </div>
-            </div>
-            <!-- <div class="showcase col-6">
-              <% if paginate && num_pages > 1 %>
-              <p>Page <%= page_number %> of <%= num_pages %></p>
-
-              <% if prev_page %>
-              <p><%= link_to 'Previous page', prev_page %></p>
-              <% end %>
-              <% end %> -->
-
-              <% page_articles.each_with_index do |article, i| %>
-                <div class="showcase col-6">
-                  <p>Enjoy some of my adventure here, at my blog!</p>
-                  <h2><%= link_to article.title, article %></h2>
-                  <!-- <span><%= article.date.strftime('%b %e') %></span> -->
-                  <!-- use article.summary(250) if you have Nokogiri available to show just
-                  the first 250 characters -->
-                  <!-- <%= article.body %> -->
+          <div class="gallery">
+            <div class="row">
+              <div class="showcase col-3">
+                <div class="gmail-cli">
+                  <a href="gmailcli">
+                    <img src="/images/gmail_cli.png" class="img" />
+                    <p class="description">gMail CLI</p>
+                  </a>
                 </div>
-              <% end %>
+              </div>
+              <div class="showcase col-3">
+                <div class="weatherapp">
+                  <a href="weatherapp">
+                    <img src="/images/weatherapp.png" class="img" />
+                    <p class="description">
+                      Weather App For Dogs
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <div class="showcase col-3">
+                <div class="stateofco">
+                  <a href="stateofco">
+                    <img src="/images/CO_logo.jpg" class="img" />
+                    <p class="description">State Of CO</p>
+                  </a>
+                </div>
+              </div>
+              <div class="showcase col-3">
+                <div class="gcamp">
+                  <a href="gcamp">
+                    <img src="/images/gcamp.png" class="img" />
+                    <p class="description">gCamp</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="showcase col-3">
+                <div class="soundboard">
+                  <a href="soundboard">
+                    <img src="/images/soundboardcat.png" class="img" />
+                    <p class="description">Soundboard</p>
+                  </a>
+                </div>
+              </div>
+              <div class="showcase col-3">
+                <div class="staytuned">
+                  <img src="/images/staytuned.png" class="img" />
+                  <p class="description">Stay tuned for Raspberry Pi, angular.js, and wordpress, and CO Open Data projects...</p>
+                </div>
+              </div>
+              <!-- <div class="showcase col-6">
+                <% if paginate && num_pages > 1 %>
+                <p>Page <%= page_number %> of <%= num_pages %></p>
 
-              <!-- <% if paginate %>
-              <% if next_page %>
-              <p><%= link_to 'Next page', next_page %></p>
-              <% end %>
-              <% end %>
-            </div> -->
+                <% if prev_page %>
+                <p><%= link_to 'Previous page', prev_page %></p>
+                <% end %>
+                <% end %> -->
+
+                <% page_articles.each_with_index do |article, i| %>
+                  <div class="showcase col-6">
+                    <p>Enjoy some of my adventure here, at my blog!</p>
+                    <h2><%= link_to article.title, article %></h2>
+                    <!-- <span><%= article.date.strftime('%b %e') %></span> -->
+                    <!-- use article.summary(250) if you have Nokogiri available to show just
+                    the first 250 characters -->
+                    <!-- <%= article.body %> -->
+                  </div>
+                <% end %>
+
+                <!-- <% if paginate %>
+                <% if next_page %>
+                <p><%= link_to 'Next page', next_page %></p>
+                <% end %>
+                <% end %>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>

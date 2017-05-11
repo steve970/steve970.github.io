@@ -245,17 +245,14 @@ a:visited {
 
 .showcase {
   background-color: #000000;
-  height: 22.188em;
+  height: 18.63em;
   overflow: hidden;
   padding: 0;
 }
 
 .img {
-  height: 22.188em;
-  // width: 100%;
-  // display: block;
-  vertical-align: inherit;
-  // object-fit: cover;
+  height: 18.63em;
+  object-fit: cover;
   transition: .2s;
 }
 
@@ -489,7 +486,11 @@ p.description {
 }
 
 .profile {
-  margin-top: 1.00em;
+  margin-top: 3.18em;
+}
+
+.gallery {
+  margin-top: 2.25em;
 }
 
 .me {
