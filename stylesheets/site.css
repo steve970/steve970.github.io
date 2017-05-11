@@ -558,13 +558,13 @@ a:visited {
 
 .showcase {
   background-color: #000000;
-  height: 22.188em;
+  height: 18.63em;
   overflow: hidden;
   padding: 0; }
 
 .img {
-  height: 22.188em;
-  vertical-align: inherit;
+  height: 18.63em;
+  object-fit: cover;
   transition: .2s; }
 
 .description {
@@ -760,7 +760,10 @@ p.description {
     background-color: #E6E0E0; }
 
 .profile {
-  margin-top: 1.00em; }
+  margin-top: 3.18em; }
+
+.gallery {
+  margin-top: 2.25em; }
 
 .me {
   text-align: left; }
