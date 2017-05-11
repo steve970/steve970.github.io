@@ -22,7 +22,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-6">
           <div class="project">
             <h1>
               PROJECT NAME: <%= current_page.data.name %>
@@ -40,14 +40,22 @@
               <a href="<%= current_page.data.repo %>" >
                 <img src="/images/github.png" class="github"/>
               </a>
-              <% if current_page.data.other %>
+              <% if current_page.data.other && current_page.data.other.npm %>
                 <a href="<%= current_page.data.other.npm %>">
                   <img src="/images/npm.svg" class="npm"/>
                 </a>
+              <% elsif current_page.data.other && current_page.data.other.link %>
+                <div class="live-site">
+                  <a href="<%= current_page.data.other.link %>">
+                    <p>Live Site</p>
+                  </a>
+                </div>
               <% end %>
 
             </div>
           </div>
+        </div>
+        <div class="col-1">
         </div>
         <div class="col-5">
           <div class="showcase">
