@@ -102,9 +102,26 @@ $( document ).ready( function () {
     return false;
   });
 
+  if ($(window).innerWidth() < 426) {
+    $('.navMenu').addClass('fixed');
+    var detach0 = $('.skills').detach();
+    var detach1 = $('.experience').detach();
+    $(detach1).insertAfter($(".resume.col-12"));
+    $(detach0).insertAfter($(".experience"));
+
+    $(".showcase").each(function () {
+      $(this).removeClass("col-3").addClass("col-12");
+      var detach = $(this).detach();
+      $(detach).insertAfter($(".gallery"));
+    })
+    $(".thanks").removeClass("col-5").addClass("col-12");
+    $(".socialLinks").removeClass("col-3").addClass("col-12");
+  };
+
   $( window ).scroll(function() {
-    console.log($( window ).scrollTop());
-    if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4011 ) {
+    if ($(window).innerWidth() < 426) {
+      console.log("Welcome to my mobile website!");
+    } else if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4011) {
       console.log('true')
       $('.navMenu').addClass('fixed');
     } else {
@@ -113,33 +130,5 @@ $( document ).ready( function () {
     }
 
   });
-
-  // Get the modal
-  var modal = document.getElementById('myModal');
-
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user opens the project, open the modal
-  // window.onload = function() {
-  //   modal.style.display = "block";
-  // }
-
-  // When the user clicks on <span> (x), close the modal
-  // span.onclick = function() {
-  //     modal.style.display = "none";
-  // }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
 
 });
