@@ -922,3 +922,50 @@ div#footerMenu.footerNavName p {
 
 .blog {
   margin: 1.5em; }
+
+@media (max-width: 425px) {
+  .background {
+    display: none; }
+
+  .background1 {
+    display: none; }
+
+  #anchorArrow {
+    display: none; }
+
+  .content {
+    top: 50%;
+    left: 50%;
+    margin: 4.125em 3.125em 2.125em 3.125em;
+    text-transform: uppercase;
+    font-size: 1.375em;
+    font-weight: 100;
+    color: #E6E0E0; }
+
+  .profile {
+    margin-top: 0; }
+
+  .resume {
+    margin-top: 0; }
+
+  #anchorArrow1.about {
+    display: none; }
+
+  #anchorArrow2.work {
+    display: none; }
+
+  #anchorArrow3.projects {
+    display: none; }
+
+  .thanks {
+    display: none; }
+
+  .anchorLinks {
+    display: none; }
+
+  .fineprint {
+    margin-top: 7em;
+    font-size: .5em;
+    font-weight: 125;
+    color: #829191;
+    text-align: center; } }
