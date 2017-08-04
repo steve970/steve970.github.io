@@ -18,3 +18,7 @@
 
 .live-site {
   margin-top: 1.25em; }
+
+@media (max-width: 425px) {
+  .showcase {
+    display: none; } }
