@@ -21,4 +21,7 @@
 
 @media (max-width: 425px) {
   .showcase {
-    display: none; } }
+    display: none; }
+
+  .projectsDescription {
+    width: 100%; } }
