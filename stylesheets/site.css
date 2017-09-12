@@ -413,7 +413,7 @@ textarea {
 
 [class*="col-"] {
   float: left;
-  padding: 1.5em 0.938em 0.938em 0.938em; }
+  padding: 0.938em; }
 
 td {
   padding: 1.250em 6.250em 0.313em 0; }
@@ -521,6 +521,7 @@ a:visited {
 .about {
   width: 100%;
   height: auto;
+  padding-top: 1.5em;
   background-color: #E6E0E0;
   font: 1.15em "Lato"; }
   .about h1 {
@@ -550,6 +551,7 @@ a:visited {
 .projects {
   width: 100%;
   height: auto;
+  padding-top: 1.5em;
   background-color: #4C5B61;
   color: #829191;
   font: 1.15em "Raleway"; }
@@ -593,13 +595,13 @@ p.description {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
 
-.gmail-cli:hover .img {
+.gmail-cli:hover .img, .gmail-cli:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3; }
 
-.gmail-cli:hover .description {
+.gmail-cli:hover .description, .gmail-cli:active .description {
   visibility: visible;
   opacity: 0.7;
   visibility: visible;
@@ -619,13 +621,13 @@ p.description {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
 
-.stateofco:hover .img {
+.stateofco:hover .img, .stateofco:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3; }
 
-.stateofco:hover .description {
+.stateofco:hover .description, .stateofco:active .description {
   visibility: visible;
   opacity: 0.7;
   visibility: visible;
@@ -645,13 +647,13 @@ p.description {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
 
-.weatherapp:hover .img {
+.weatherapp:hover .img, .weatherapp:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3; }
 
-.weatherapp:hover .description {
+.weatherapp:hover .description, .weatherapp:active .description {
   visibility: visible;
   opacity: 0.7;
   visibility: visible;
@@ -697,13 +699,13 @@ p.description {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
 
-.soundboard:hover .img {
+.soundboard:hover .img, .soundboard:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3; }
 
-.soundboard:hover .description {
+.soundboard:hover .description, .soundboard:active .description {
   visibility: visible;
   opacity: 0.7;
   visibility: visible;
@@ -724,13 +726,13 @@ p.description {
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
 
-.staytuned:hover .img {
+.staytuned:hover .img, .staytuned:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3; }
 
-.staytuned:hover .description {
+.staytuned:hover .description, .staytuned:active .description {
   visibility: visible;
   opacity: 0.7;
   visibility: visible;
