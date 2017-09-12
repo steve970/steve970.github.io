@@ -155,6 +155,8 @@ $( document ).ready( function () {
     $("#footerMobileProjects").removeClass("col-2").addClass("col-12");
     $("#footerMobileResume").removeClass("col-2").addClass("col-12");
 
+    $(".soundboard").addClass("");
+
     $(".mobileLinks").hide();
 
   };

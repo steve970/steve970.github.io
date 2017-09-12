@@ -198,7 +198,6 @@ a:visited {
 .about {
   width: 100%;
   height: auto;
-  padding-top: 1.5em;
   background-color: #E6E0E0;
   font: 1.15em "Lato";
   h1 {
@@ -291,14 +290,14 @@ p.description {
   transition: all 0.3s;
 }
 
-.gmail-cli:hover .img, .gmail-cli:active .img {
+.gmail-cli:hover .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3;
 }
 
-.gmail-cli:hover .description, .gmail-cli:active .description {
+.gmail-cli:hover .description {
   visibility: visible;
   opacity: 0.7;
   visibility:visible;
@@ -321,14 +320,14 @@ p.description {
   transition: all 0.3s;
 }
 
-.stateofco:hover .img, .stateofco:active .img {
+.stateofco:hover .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3;
 }
 
-.stateofco:hover .description, .stateofco:active .description {
+.stateofco:hover .description {
   visibility: visible;
   opacity: 0.7;
   visibility:visible;
@@ -352,14 +351,14 @@ p.description {
 
 }
 
-.weatherapp:hover .img, .weatherapp:active .img {
+.weatherapp:hover .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3;
 }
 
-.weatherapp:hover .description, .weatherapp:active .description {
+.weatherapp:hover .description {
   visibility: visible;
   opacity: 0.7;
   visibility:visible;
@@ -382,17 +381,16 @@ p.description {
   transition: all 0.3s;
 }
 
-.gcamp:hover .img {
+.gcamp:hover .img, .gcamp:active .img {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   opacity: 0.3;
 }
 
-.gcamp:hover .description {
+.gcamp:hover .description, .gcamp:active .description {
   visibility: visible;
   opacity: 0.7;
-  visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -422,7 +420,6 @@ p.description {
 .soundboard:hover .description, .soundboard:active .description {
   visibility: visible;
   opacity: 0.7;
-  visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -453,7 +450,6 @@ p.description {
 .staytuned:hover .description, .staytuned:active .description {
   visibility: visible;
   opacity: 0.7;
-  visibility:visible;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -488,7 +484,7 @@ p.description {
 }
 
 .profile {
-  margin-top: 2.18em;
+  padding-top: 4.18em;
   background-color: #E6E0E0;
 }
 
@@ -784,6 +780,14 @@ div#footerMenu.footerNavName p {
   top: 0.875em;
   width: 0%;
   left: 50%;
+}
+
+.profile {
+
+  font: 1.15em "Lato";
+  h1 {
+    font-family: "Bitter"
+  }
 }
 
 
