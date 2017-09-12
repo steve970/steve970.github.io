@@ -29,7 +29,12 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#aboutAnchor').offset().top
     }, 1000);
-    return false;
+    if ($(window).innerWidth() < 426) {
+      $(".js").toggle()
+    } else {
+      return false;
+    }
+
   });
 
   $("#footerAboutNav").click(function() {
@@ -50,7 +55,11 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#workAnchor').offset().top
     }, 1000);
-    return false;
+    if ($(window).innerWidth() < 426) {
+      $(".js").toggle()
+    } else {
+      return false;
+    }
   });
 
   $("#footerSkillNav").click(function() {
@@ -71,7 +80,11 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#projectAnchor').offset().top
     }, 1000);
-    return false;
+    if ($(window).innerWidth() < 426) {
+      $(".js").toggle()
+    } else {
+      return false;
+    }
   });
 
   $("#footerProjectNav").click(function() {
