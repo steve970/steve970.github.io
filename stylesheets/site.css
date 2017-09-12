@@ -413,7 +413,7 @@ textarea {
 
 [class*="col-"] {
   float: left;
-  padding: 0.938em; }
+  padding: 1.5em 0.938em 0.938em 0.938em; }
 
 td {
   padding: 1.250em 6.250em 0.313em 0; }
