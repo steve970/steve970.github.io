@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     all: './source/javascripts/all.js',
     bootstrap: './source/javascripts/projects.js'
+    // m_projects: './source/javascripts/m_projects.js'
   },
 
   output: {

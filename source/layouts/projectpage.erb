@@ -22,46 +22,42 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-6">
-          <div class="project">
-            <h1>
-              PROJECT NAME: <%= current_page.data.name %>
-            </h1>
-            <h3>
-              <%= current_page.data.summary %>
-            </h3>
-            <p>
-              <%= current_page.data.description %>
-            </p>
-            <h2>
-              <%= current_page.data.tech %>
-            </h2>
-            <div>
-              <a href="<%= current_page.data.repo %>" >
-                <img src="/images/github.png" class="github"/>
+        <div class="projectsDescription col-6">
+          <h1>
+            PROJECT NAME: <%= current_page.data.name %>
+          </h1>
+          <h3>
+            <%= current_page.data.summary %>
+          </h3>
+          <p>
+            <%= current_page.data.description %>
+          </p>
+          <h2>
+            <%= current_page.data.tech %>
+          </h2>
+          <div>
+            <a href="<%= current_page.data.repo %>" >
+              <img src="/images/github.png" class="github"/>
+            </a>
+            <% if current_page.data.other && current_page.data.other.npm %>
+              <a href="<%= current_page.data.other.npm %>">
+                <img src="/images/npm.svg" class="npm"/>
               </a>
-              <% if current_page.data.other && current_page.data.other.npm %>
-                <a href="<%= current_page.data.other.npm %>">
-                  <img src="/images/npm.svg" class="npm"/>
+            <% elsif current_page.data.other && current_page.data.other.link %>
+              <div class="live-site">
+                <a href="<%= current_page.data.other.link %>">
+                  <p>Live Site</p>
                 </a>
-              <% elsif current_page.data.other && current_page.data.other.link %>
-                <div class="live-site">
-                  <a href="<%= current_page.data.other.link %>">
-                    <p>Live Site</p>
-                  </a>
-                </div>
-              <% end %>
+              </div>
+            <% end %>
 
-            </div>
           </div>
         </div>
         <div class="col-1">
         </div>
-        <div class="col-5">
-          <div class="showcase">
-            <div class="<%= current_page.data.class %>">
-                <img src="<%= current_page.data.image %>" class="img" />
-            </div>
+        <div class="showcase col-5">
+          <div class="<%= current_page.data.class %>">
+              <img src="<%= current_page.data.image %>" class="img" />
           </div>
         </div>
       </div>
@@ -75,6 +71,7 @@
     </div>
 
     <%= javascript_include_tag :projects %>
+    <%= javascript_include_tag :all %>
 
   </body>
 </html>

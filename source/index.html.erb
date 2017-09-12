@@ -18,41 +18,44 @@ per_page: 10
   </div>
   <div name="aboutAnchor" id="aboutAnchor" class="about">
     <div class="navMenu">
-      <div class="row">
+      <div class="row" id="mobileNavigation">
         <nav class="flexcontainer">
           <div class="col-12">
             <div class="col-1">
             </div>
             <div class="col-10">
+              <div class="col-2" id="menuNavHello">
+                <div class="navName" id="menu"><a href="#" id="top"><p>HELLO, I'M STEVE</p></a></div>
+              </div>
               <div class="js">
-                <div class="col-2">
-                  <div class="navName" id="menu"><a href="#" id="top"><p>HELLO, I'M STEVE</p></a></div>
-                </div>
-                <div class="col-2">
+                <div class="col-2" id="menuNavAbout">
                   <div class="navName" id="menu"><a href="#about" class="anchorLink" id="aboutNav"><p>about me</p></a></div>
                 </div>
-                <div class="col-2">
+                <div class="col-2" id="menuNavResume">
                   <div class="navName" id="menu"><a href="#resume" class="anchorLink" id="skillNav"><p>resume</p></a></div>
                 </div>
-                <div class="col-2">
+                <div class="col-2" id="menuNavProjects">
                   <div class="navName" id="menu"><a href="#projects" class="anchorLink" id="projectNav"><p>projects</p></a></div>
                 </div>
-                <div class="col-2">
+                <div class="col-2" id="menuNavContact">
                   <div class="navName" id="menu"><a href="#contactAnchor" class="anchorLink" id="contactNav"><p>hire me</p></a></div>
                 </div>
               </div>
             </div>
-            <div class="col-1">
-              <div class="threeLine" id="menu"><p>&#9776;</p></div>
+            <div class="col-1" id="menuThreeLine">
+              <div class="threeLine" id="nav-icon3">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <!-- <div class="threeLine" id="menu"><p>&#9776;</p></div> -->
             </div>
           </div>
         </nav>
       </div>
     </div>
-    <div class="row">
-      <div class="profile col-12">
-      </div>
-    </div>
+  </div>
     <div class="row">
       <div class="profile col-12">
         <div class="col-12">
@@ -160,7 +163,7 @@ per_page: 10
   <div name="projectAnchor" id="projectAnchor" class="projects">
     <div class="row">
       <div class="col-12">
-        <div class="col-12 profile">
+        <div class="col-12 projects">
           <h1>Projects</h1>
           <p>Things I enjoy doing in my free time and want to share with the world.</p>
           <p>(Links to projects coming soon!)</p>
@@ -281,7 +284,7 @@ per_page: 10
             <div class="col-1">
               <div class="footerThreeLine" id="footerMenu"></div>
             </div>
-            <div class="socialLinks col-3">
+            <div class="col-3" id="footerMobileNav">
                 <a href="https://github.com/steve970">
                   <img src="/images/github.png" class="github"/>
                 </a>
@@ -291,14 +294,14 @@ per_page: 10
                 <a href="mailto:hirschhorn970@gmail.com" target="_top" style="color: black"><img src="/images/email.png" class="email" /></a>
                 <a href="Steve Hirschhorn Resume.pdf" target="_blank"><img src="/images/resume.png" id="resume" /></a>
             </div>
-            <div class="anchorLinks">
-              <div class="col-2">
+            <div class="mobileLinks">
+              <div class="col-2" id="footerMobileAbout">
                 <div class="footerNavName" id="footerMenu"><a href="#about" class="anchorLink" id="footerAboutNav"><p>about me</p></a></div>
               </div>
-              <div class="col-2">
+              <div class="col-2" id="footerMobileResume">
                 <div class="footerNavName" id="footerMenu"><a href="#resume" class="anchorLink" id="footerSkillNav"><p>resume</p></a></div>
               </div>
-              <div class="col-2">
+              <div class="col-2" id="footerMobileProjects">
                 <div class="footerNavName" id="footerMenu"><a href="#projects" class="anchorLink" id="footerProjectNav"><p>projects</p></a></div>
               </div>
             </div>

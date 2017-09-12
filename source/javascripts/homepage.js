@@ -114,8 +114,36 @@ $( document ).ready( function () {
       var detach = $(this).detach();
       $(detach).insertAfter($(".gallery"));
     })
-    $(".thanks").removeClass("col-5").addClass("col-12");
-    $(".socialLinks").removeClass("col-3").addClass("col-12");
+
+
+
+    $("#menuNavHello").removeClass("col-3").addClass("col-12");
+    $("#menuNavAbout").removeClass("col-2").addClass("col-12");
+    $("#menuNavResume").removeClass("col-2").addClass("col-12");
+    $("#menuNavProjects").removeClass("col-2").addClass("col-12");
+    $("#menuNavContact").removeClass("col-2").addClass("col-12");
+
+    $("#menuNavHello").wrap("<div class='row'></div>");
+    $("#menuNavAbout").wrap("<div class='row'></div>");
+    $("#menuNavResume").wrap("<div class='row'></div>");
+    $("#menuNavProjects").wrap("<div class='row'></div>");
+    $("#menuNavContact").wrap("<div class='row'></div>");
+
+    var detach2 = $("#menuNavHello").detach();
+    console.log(detach2);
+    $(detach2).insertBefore($("#menuNavAbout"));
+
+    var detach3 = $(".js").detach();
+    $(detach3).insertAfter($("#mobileNavigation"));
+    $(".js").wrap("<div></div>");
+
+    $("#footerMobileNav").removeClass("col-3").addClass("col-12");
+    $("#footerMobileAbout").removeClass("col-2").addClass("col-12");
+    $("#footerMobileProjects").removeClass("col-2").addClass("col-12");
+    $("#footerMobileResume").removeClass("col-2").addClass("col-12");
+
+    $(".mobileLinks").hide();
+
   };
 
   $( window ).scroll(function() {
@@ -129,6 +157,10 @@ $( document ).ready( function () {
       $('.navMenu').removeClass('fixed');
     }
 
+  });
+
+  $('#nav-icon3').click(function(){
+    $(this).toggleClass('open');
   });
 
 });

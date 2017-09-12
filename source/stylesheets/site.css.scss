@@ -486,7 +486,8 @@ p.description {
 }
 
 .profile {
-  margin-top: 3.18em;
+  margin-top: 2.18em;
+  background-color: #E6E0E0;
 }
 
 .gallery {
@@ -616,8 +617,8 @@ div#menu.threeLine p {
 }
 
 div#menu.navName p {
-  height:auto;
-  margin-top: 0.50em;
+  // height:auto;
+  margin: 0.50em;
 }
 
 div#footerMenu.footerThreeLine p {
@@ -631,9 +632,9 @@ div#footerMenu.footerNavName p {
 }
 
 .js {
-  display: inline;
+  background-color: #2C423F;
+  width:100%;
 }
-
 
 .together p, img {
   display: inline-block;
@@ -708,6 +709,82 @@ div#footerMenu.footerNavName p {
   margin: 1.5em;
 }
 
+#nav-icon3 {
+ width: 1em;
+ height: .75em;
+ position: relative;
+ margin-top: 0.50em;
+ -webkit-transform: rotate(0deg);
+ -moz-transform: rotate(0deg);
+ -o-transform: rotate(0deg);
+ transform: rotate(0deg);
+ -webkit-transition: .5s ease-in-out;
+ -moz-transition: .5s ease-in-out;
+ -o-transition: .5s ease-in-out;
+ transition: .5s ease-in-out;
+ cursor: pointer;
+}
+
+#nav-icon3 span, {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #E6E0E0;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+/* Icon 3 */
+
+#nav-icon3 span:nth-child(1) {
+  top: 0em;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 0.438em;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 0.875em;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 0.875em;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 0.875em;
+  width: 0%;
+  left: 50%;
+}
+
+
 @media (max-width: 425px) {
   .background {
     display: none;
@@ -736,7 +813,7 @@ div#footerMenu.footerNavName p {
     margin-top: 0;
   }
 
-  #anchorArrow1.about {
+  #anchorArrow2.work {
     display: none;
   }
 
@@ -766,6 +843,11 @@ div#footerMenu.footerNavName p {
     font-weight: 125;
     color: #829191;
     text-align: center;
+  }
+
+  .js {
+    background-color: #2C423F;
+    width:100%;
   }
 
 }
