@@ -119,7 +119,7 @@ $( document ).ready( function () {
     return false;
   });
 
-  if ($(window).innerWidth() < 426) {
+  if ($(window).innerWidth() < 1025) {
     $('.navMenu').addClass('fixed');
     var detach0 = $('.skills').detach();
     var detach1 = $('.experience').detach();
