@@ -105,7 +105,11 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#contactAnchor').offset().top
     }, 1000);
-    return false;
+    if ($(window).innerWidth() < 426) {
+      $(".js").toggle()
+    } else {
+      return false;
+    }
   });
 
   $("#footerContactNav").click(function() {
