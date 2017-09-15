@@ -870,7 +870,10 @@ div#footerMenu.footerNavName p {
 
 .js {
   background-color: #2C423F;
-  width: 100%; }
+  width: 100%;
+  height: 15em;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 .together p, img {
   display: inline-block; }
@@ -992,7 +995,7 @@ div#footerMenu.footerNavName p {
   .profile h1 {
     font-family: "Bitter"; }
 
-@media (max-width: 425px) {
+@media (max-width: 1024px) {
   .background {
     display: none; }
 
