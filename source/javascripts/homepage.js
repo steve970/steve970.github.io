@@ -22,15 +22,21 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: 0
     }, 1000);
-    return false;
+    if ($(window).innerWidth() < 1025) {
+      $(".js").toggle()
+      $('#nav-icon3').toggleClass('open');
+    } else {
+      return false;
+    }
   })
 
   $("#aboutNav").click(function() {
     $('html, body').animate({
         scrollTop: $('#aboutAnchor').offset().top
     }, 1000);
-    if ($(window).innerWidth() < 426) {
+    if ($(window).innerWidth() < 1025) {
       $(".js").toggle()
+      $('#nav-icon3').toggleClass('open');
     } else {
       return false;
     }
@@ -55,8 +61,9 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#workAnchor').offset().top
     }, 1000);
-    if ($(window).innerWidth() < 426) {
+    if ($(window).innerWidth() < 1025) {
       $(".js").toggle()
+      $('#nav-icon3').toggleClass('open');
     } else {
       return false;
     }
@@ -80,8 +87,9 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#projectAnchor').offset().top
     }, 1000);
-    if ($(window).innerWidth() < 426) {
+    if ($(window).innerWidth() < 1025) {
       $(".js").toggle()
+      $('#nav-icon3').toggleClass('open');
     } else {
       return false;
     }
@@ -105,8 +113,9 @@ $( document ).ready( function () {
     $('html, body').animate({
         scrollTop: $('#contactAnchor').offset().top
     }, 1000);
-    if ($(window).innerWidth() < 426) {
+    if ($(window).innerWidth() < 1025) {
       $(".js").toggle()
+      $('#nav-icon3').toggleClass('open');
     } else {
       return false;
     }
@@ -166,8 +175,9 @@ $( document ).ready( function () {
   };
 
   $( window ).scroll(function() {
-    if ($(window).innerWidth() < 426) {
+    if ($(window).innerWidth() < 1025) {
       console.log("Welcome to my mobile website!");
+      $('.navMenu').addClass('fixed');
     } else if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4011) {
       console.log('true')
       $('.navMenu').addClass('fixed');
