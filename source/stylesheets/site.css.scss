@@ -15,6 +15,14 @@
   display: inline;
 }
 
+.smalljob li a {
+  background-color: unset;
+  display: unset;
+  padding: unset;
+  font-size: unset;
+  text-decoration: underline;
+}
+
 .col-1 {
   width: 8.33%;
 }
