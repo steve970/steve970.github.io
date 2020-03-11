@@ -23,3 +23,6 @@
 
 # Ignore temp folders
 /.tmp
+
+# Ignore Gemfile.lock
+Gemfile.lock
