@@ -215,55 +215,21 @@ per_page: 10
                 </div>
               </div>
               <div class="showcase col-3">
-                <div class="soundboard">
-                  <a href="soundboard">
-                    <img src="/images/soundboardcat.png" class="img" />
-                    <p class="description">Soundboard</p>
-                  </a>
-                </div>
-              </div>
-              <div class="showcase col-3">
-                <div class="soundboard">
-                  <a href="soundboard">
-                    <img src="/images/soundboardcat.png" class="img" />
-                    <p class="description">Soundboard</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="showcase col-3">
                 <div class="staytuned">
                   <img src="/images/staytuned.png" class="img" />
                   <p class="description">Stay tuned for more projects...</p>
                 </div>
               </div>
-              <!-- <div class="showcase col-6">
-                <% if paginate && num_pages > 1 %>
-                <p>Page <%= page_number %> of <%= num_pages %></p>
-
-                <% if prev_page %>
-                <p><%= link_to 'Previous page', prev_page %></p>
+              <div class="showcase col-6">
+                <p>Enjoy some of my adventure here, at my blog!</p>
+                <% page_articles.each_with_index do |article, i| %>
+                <h2><%= link_to article.title, article %></h2>
+                <!-- <span><%= article.date.strftime('%b %e') %></span> -->
+                <!-- use article.summary(250) if you have Nokogiri available to show just
+                the first 250 characters -->
+                <!-- <%= article.body %> -->
                 <% end %>
-                <% end %> -->
-
-                  <div class="showcase col-6">
-                    <p>Enjoy some of my adventure here, at my blog!</p>
-                    <% page_articles.each_with_index do |article, i| %>
-                    <h2><%= link_to article.title, article %></h2>
-                    <!-- <span><%= article.date.strftime('%b %e') %></span> -->
-                    <!-- use article.summary(250) if you have Nokogiri available to show just
-                    the first 250 characters -->
-                    <!-- <%= article.body %> -->
-                    <% end %>
-                  </div>
-
-                <!-- <% if paginate %>
-                <% if next_page %>
-                <p><%= link_to 'Next page', next_page %></p>
-                <% end %>
-                <% end %>
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
