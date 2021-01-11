@@ -16,7 +16,7 @@ gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 # gem "jquery-middleman"
 # gem "middleman-sprockets"
 
-gem 'redcarpet', '~> 3.3', '>= 3.3.3'
+gem 'redcarpet', '~> 3.5'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
