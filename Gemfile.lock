@@ -94,7 +94,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    redcarpet (3.4.0)
+    redcarpet (3.5.1)
     sass (3.4.23)
     servolux (0.12.0)
     thor (0.19.4)
@@ -113,7 +113,7 @@ DEPENDENCIES
   middleman (~> 4.1)
   middleman-blog
   middleman-deploy (~> 2.0.0.pre.alpha)
-  redcarpet (~> 3.3, >= 3.3.3)
+  redcarpet (~> 3.5)
   tzinfo-data
   wdm (~> 0.1.0)
 
