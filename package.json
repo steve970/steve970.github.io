@@ -21,7 +21,7 @@
     "sass-loader": "^6.0.7",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.9",
-    "webpack": "^2.7.0"
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "bootstrap-loader": "^3.0.4",
