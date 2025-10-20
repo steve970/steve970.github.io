@@ -61,6 +61,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  max-width: 600px; // Prevent content from spreading too wide on large screens
   
   @media (max-width: 1024px) {
     position: relative;
@@ -68,6 +69,7 @@ body {
     height: auto;
     min-height: 100vh;
     padding: 100px 50px;
+    max-width: none;
   }
 }
 
@@ -155,6 +157,7 @@ body {
 .main-nav {
   margin-bottom: 50px;
   margin-left: 4px; // Align with hero content
+  width: 100%; // Ensure consistent width
   
   ul {
     list-style: none;
@@ -201,6 +204,7 @@ body {
   display: flex;
   gap: 20px;
   margin-left: 4px; // Align with hero content
+  width: 100%; // Ensure consistent width
   
   .social-link {
     color: $light-slate;
@@ -1090,6 +1094,19 @@ FLOATING NAVIGATION SOLUTION
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// LARGE SCREEN IMPROVEMENTS
+@media (min-width: 1200px) {
+  .left-column {
+    padding: 0 60px; // Slightly more padding on very large screens
+    
+    .hero-content,
+    .main-nav,
+    .social-links {
+      max-width: 500px; // Prevent content from spreading too wide
+    }
   }
 }
 
