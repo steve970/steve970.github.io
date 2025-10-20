@@ -20,19 +20,22 @@ page '/soundboard.html', layout: "projectpage"
 page '/gcamp.html', layout: "projectpage"
 page '/stateofco.html', layout: "projectpage"
 
+# Archive pages
+page '/archive/v1/index.html', layout: "v1_layout"
+
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
-# External Pipeline
+# External Pipeline - Disabled to avoid ES module issues
 ###
 
-activate :external_pipeline,
-  name: :webpack,
-  command: build? ? './node_modules/webpack/bin/webpack.js --bail -p' : './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
-  source: ".tmp/dist",
-  latency: 1
+# activate :external_pipeline,
+#   name: :vite,
+#   command: build? ? 'npm run build' : 'npm run dev',
+#   source: ".tmp/dist",
+#   latency: 1
 
 ###
 # Helpers
@@ -88,6 +91,6 @@ configure :build do
   # Minify CSS on build
   # activate :minify_css
 
-  # Minify Javascript on build
-  activate :minify_javascript
+  # Minify Javascript on build - disabled due to ES modules
+  # activate :minify_javascript
 end

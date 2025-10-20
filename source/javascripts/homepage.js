@@ -1,195 +1,274 @@
-// This is where it all goes :)
-$( document ).ready( function () {
+// Vanilla JS version of the working jQuery code
+document.addEventListener('DOMContentLoaded', function() {
 
-  $(".js").hide();
+  // Hide .js elements
+  const jsElements = document.querySelectorAll('.js');
+  jsElements.forEach(el => el.style.display = 'none');
 
-  $(".threeLine").click(function () {
-    $(".js").toggle()
-  });
+  // Toggle functions for mobile menu
+  function toggleJs() {
+    jsElements.forEach(el => {
+      el.style.display = el.style.display === 'none' ? '' : 'none';
+    });
+  }
 
-  $(".footerThreeLine").click(function () {
-    $(".js").toggle()
-  });
+  // Smooth scroll function that replicates jQuery animate
+  function smoothScrollTo(targetSelector, duration = 1000) {
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    
+    const targetPosition = target.offsetTop;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
 
-  $("#anchorArrow").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#aboutAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#top").click(function() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 1000);
-    if ($(window).innerWidth() < 1025) {
-      $(".js").toggle()
-      $('#nav-icon3').toggleClass('open');
-    } else {
-      return false;
-    }
-  })
-
-  $("#aboutNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#aboutAnchor').offset().top
-    }, 1000);
-    if ($(window).innerWidth() < 1025) {
-      $(".js").toggle()
-      $('#nav-icon3').toggleClass('open');
-    } else {
-      return false;
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
-  });
-
-  $("#footerAboutNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#aboutAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#anchorArrow1").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#workAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#skillNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#workAnchor').offset().top
-    }, 1000);
-    if ($(window).innerWidth() < 1025) {
-      $(".js").toggle()
-      $('#nav-icon3').toggleClass('open');
-    } else {
-      return false;
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
     }
+
+    requestAnimationFrame(animation);
+  }
+
+  // Three line menu toggles
+  document.querySelectorAll('.threeLine').forEach(el => {
+    el.addEventListener('click', toggleJs);
   });
 
-  $("#footerSkillNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#workAnchor').offset().top
-    }, 1000);
-    return false;
+  document.querySelectorAll('.footerThreeLine').forEach(el => {
+    el.addEventListener('click', toggleJs);
   });
 
-  $("#anchorArrow2").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#projectAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#projectNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#projectAnchor').offset().top
-    }, 1000);
-    if ($(window).innerWidth() < 1025) {
-      $(".js").toggle()
-      $('#nav-icon3').toggleClass('open');
-    } else {
+  // Anchor Arrow - scroll to about
+  const anchorArrow = document.getElementById('anchorArrow');
+  if (anchorArrow) {
+    anchorArrow.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#about');
       return false;
-    }
-  });
+    });
+  }
 
-  $("#footerProjectNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#projectAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#anchorArrow3").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#contactAnchor').offset().top
-    }, 1000);
-    return false;
-  });
-
-  $("#contactNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#contactAnchor').offset().top
-    }, 1000);
-    if ($(window).innerWidth() < 1025) {
-      $(".js").toggle()
-      $('#nav-icon3').toggleClass('open');
-    } else {
+  // Top button - scroll to top
+  const topBtn = document.getElementById('top');
+  if (topBtn) {
+    topBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('body');
+      if (window.innerWidth < 1025) {
+        toggleJs();
+        const navIcon = document.getElementById('nav-icon3');
+        if (navIcon) navIcon.classList.toggle('open');
+      }
       return false;
+    });
+  }
+
+  // About Nav - scroll to about
+  const aboutNav = document.getElementById('aboutNav');
+  if (aboutNav) {
+    aboutNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#about');
+      if (window.innerWidth < 1025) {
+        toggleJs();
+        const navIcon = document.getElementById('nav-icon3');
+        if (navIcon) navIcon.classList.toggle('open');
+      }
+      return false;
+    });
+  }
+
+  // Footer About Nav
+  const footerAboutNav = document.getElementById('footerAboutNav');
+  if (footerAboutNav) {
+    footerAboutNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#about');
+      return false;
+    });
+  }
+
+  // Anchor Arrow 1 - scroll to experience
+  const anchorArrow1 = document.getElementById('anchorArrow1');
+  if (anchorArrow1) {
+    anchorArrow1.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#experience');
+      return false;
+    });
+  }
+
+  // Skill Nav - scroll to experience
+  const skillNav = document.getElementById('skillNav');
+  if (skillNav) {
+    skillNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#experience');
+      if (window.innerWidth < 1025) {
+        toggleJs();
+        const navIcon = document.getElementById('nav-icon3');
+        if (navIcon) navIcon.classList.toggle('open');
+      }
+      return false;
+    });
+  }
+
+  // Footer Skill Nav
+  const footerSkillNav = document.getElementById('footerSkillNav');
+  if (footerSkillNav) {
+    footerSkillNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#experience');
+      return false;
+    });
+  }
+
+  // Anchor Arrow 2 - scroll to projects
+  const anchorArrow2 = document.getElementById('anchorArrow2');
+  if (anchorArrow2) {
+    anchorArrow2.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#work');
+      return false;
+    });
+  }
+
+  // Project Nav - scroll to projects
+  const projectNav = document.getElementById('projectNav');
+  if (projectNav) {
+    projectNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#work');
+      if (window.innerWidth < 1025) {
+        toggleJs();
+        const navIcon = document.getElementById('nav-icon3');
+        if (navIcon) navIcon.classList.toggle('open');
+      }
+      return false;
+    });
+  }
+
+  // Footer Project Nav
+  const footerProjectNav = document.getElementById('footerProjectNav');
+  if (footerProjectNav) {
+    footerProjectNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#work');
+      return false;
+    });
+  }
+
+  // Anchor Arrow 3 - scroll to contact
+  const anchorArrow3 = document.getElementById('anchorArrow3');
+  if (anchorArrow3) {
+    anchorArrow3.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#contact');
+      return false;
+    });
+  }
+
+  // Contact Nav - scroll to contact
+  const contactNav = document.getElementById('contactNav');
+  if (contactNav) {
+    contactNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#contact');
+      if (window.innerWidth < 1025) {
+        toggleJs();
+        const navIcon = document.getElementById('nav-icon3');
+        if (navIcon) navIcon.classList.toggle('open');
+      }
+      return false;
+    });
+  }
+
+  // Footer Contact Nav
+  const footerContactNav = document.getElementById('footerContactNav');
+  if (footerContactNav) {
+    footerContactNav.addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('#contact');
+      return false;
+    });
+  }
+
+  // Mobile layout adjustments
+  if (window.innerWidth < 1025) {
+    const navMenu = document.querySelector('.navMenu');
+    if (navMenu) navMenu.classList.add('fixed');
+
+    // Mobile DOM manipulations (simplified)
+    const skills = document.querySelector('.skills');
+    const experience = document.querySelector('.experience');
+    const resume = document.querySelector('.resume.col-12');
+
+    if (skills && experience && resume) {
+      resume.parentNode.insertBefore(experience, resume.nextSibling);
+      experience.parentNode.insertBefore(skills, experience.nextSibling);
     }
-  });
 
-  $("#footerContactNav").click(function() {
-    $('html, body').animate({
-        scrollTop: $('#contactAnchor').offset().top
-    }, 1000);
-    return false;
-  });
+    // Mobile navigation class changes
+    const mobileNavElements = [
+      'menuNavHello', 'menuNavAbout', 'menuNavResume', 
+      'menuNavProjects', 'menuNavContact'
+    ];
 
-  if ($(window).innerWidth() < 1025) {
-    $('.navMenu').addClass('fixed');
-    var detach0 = $('.skills').detach();
-    var detach1 = $('.experience').detach();
-    $(detach1).insertAfter($(".resume.col-12"));
-    $(detach0).insertAfter($(".experience"));
+    mobileNavElements.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.classList.remove('col-3', 'col-2');
+        element.classList.add('col-12');
+      }
+    });
 
-    $(".showcase").each(function () {
-      $(this).removeClass("col-3").addClass("col-12");
-      var detach = $(this).detach();
-      $(detach).insertAfter($(".gallery"));
-    })
+    const mobileLinks = document.querySelector('.mobileLinks');
+    if (mobileLinks) mobileLinks.style.display = 'none';
+  }
 
+  // Scroll behavior
+  window.addEventListener('scroll', function() {
+    const navMenu = document.querySelector('.navMenu');
+    if (!navMenu) return;
 
-
-    $("#menuNavHello").removeClass("col-3").addClass("col-12");
-    $("#menuNavAbout").removeClass("col-2").addClass("col-12");
-    $("#menuNavResume").removeClass("col-2").addClass("col-12");
-    $("#menuNavProjects").removeClass("col-2").addClass("col-12");
-    $("#menuNavContact").removeClass("col-2").addClass("col-12");
-
-    $("#menuNavHello").wrap("<div class='row'></div>");
-    $("#menuNavAbout").wrap("<div class='row'></div>");
-    $("#menuNavResume").wrap("<div class='row'></div>");
-    $("#menuNavProjects").wrap("<div class='row'></div>");
-    $("#menuNavContact").wrap("<div class='row'></div>");
-
-    var detach2 = $("#menuNavHello").detach();
-    console.log(detach2);
-    $(detach2).insertBefore($("#menuNavAbout"));
-
-    var detach3 = $(".js").detach();
-    $(detach3).insertAfter($("#mobileNavigation"));
-    $(".js").wrap("<div></div>");
-
-    $("#footerMobileNav").removeClass("col-3").addClass("col-12");
-    $("#footerMobileAbout").removeClass("col-2").addClass("col-12");
-    $("#footerMobileProjects").removeClass("col-2").addClass("col-12");
-    $("#footerMobileResume").removeClass("col-2").addClass("col-12");
-
-    $(".soundboard").addClass("");
-
-    $(".mobileLinks").hide();
-
-  };
-
-  $( window ).scroll(function() {
-    if ($(window).innerWidth() < 1025) {
+    if (window.innerWidth < 1025) {
       console.log("Welcome to my mobile website!");
-      $('.navMenu').addClass('fixed');
-    } else if ($( window ).scrollTop() > 894 && $( window ).scrollTop() < 4011) {
-      console.log('true')
-      $('.navMenu').addClass('fixed');
+      navMenu.classList.add('fixed');
+    } else if (window.scrollY > 894 && window.scrollY < 4011) {
+      console.log('true');
+      navMenu.classList.add('fixed');
     } else {
-      console.log('false')
-      $('.navMenu').removeClass('fixed');
+      console.log('false');
+      navMenu.classList.remove('fixed');
     }
-
   });
 
-  $('#nav-icon3').click(function(){
-    $(this).toggleClass('open');
+  // Mobile menu toggle
+  const navIcon = document.getElementById('nav-icon3');
+  if (navIcon) {
+    navIcon.addEventListener('click', function() {
+      navIcon.classList.toggle('open');
+    });
+  }
+
+  // Add smooth scrolling to navigation links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      smoothScrollTo(targetId);
+    });
   });
 
 });

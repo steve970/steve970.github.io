@@ -11,12 +11,17 @@
     <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway|Lato:100,300,700" rel="stylesheet">
 
     <%= stylesheet_link_tag :site %>
+    <%= stylesheet_link_tag "v2_modern" %>
 
   </head>
 
   <body class="<%= page_classes %>">
     <%= yield %>
     
-    <%= javascript_include_tag :all %>
+    <script src="/javascripts/homepage.js"></script>
+    <script src="/javascripts/smooth-scroll.js"></script>
+    <script src="/javascripts/cursor-spotlight.js"></script>
+    <script src="/javascripts/version-modal.js"></script>
+    <script src="/javascripts/v2-mobile-nav.js"></script>
   </body>
 </html>

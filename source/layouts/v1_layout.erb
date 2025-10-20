@@ -1,0 +1,952 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= current_page.data.title || "Steve Hirschhorn - Portfolio Archive" %></title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Raleway|Lato:100,300,700" rel="stylesheet">
+    
+    <!-- V1 Archive styles -->
+    <%= stylesheet_link_tag "archive/v1/stylesheets/site" %>
+    
+    <style>
+      /* COMPLETE RESET AND STICKY NAV IMPLEMENTATION */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      /* UNIFORM NAVIGATION - SAME APPEARANCE IN ALL STATES */
+      .navMenu {
+        position: relative !important;
+        width: 100% !important;
+        background-color: #2C423F !important;
+        z-index: 100 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        height: auto !important;
+        min-height: 60px !important;
+        display: block !important;
+      }
+      
+      .navMenu.sticky {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 9999 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+        /* Keep all other properties the same */
+        background-color: #2C423F !important;
+        height: auto !important;
+        min-height: 60px !important;
+      }
+      
+      /* Navigation container - uniform styling */
+      .navMenu .row {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        background-color: #2C423F !important;
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      
+      .flexcontainer {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding: 0 2rem !important;
+        margin: 0 !important;
+        background-color: #2C423F !important;
+        min-height: 60px !important;
+        box-sizing: border-box !important;
+      }
+      
+      .flexcontainer .col-12 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      
+      .flexcontainer .col-1 {
+        display: none !important; /* Hide empty columns */
+      }
+      
+      .flexcontainer .col-10 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      
+      /* Logo/Brand section */
+      #menuNavHello {
+        margin-right: 3rem !important;
+        flex-shrink: 0 !important;
+      }
+      
+      #menuNavHello .navName {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      #menuNavHello .navName p {
+        color: #E6E0E0 !important;
+        font-size: 1em !important;
+        font-family: "Lato", sans-serif !important;
+        font-weight: 400 !important;
+        margin: 0 !important;
+        padding: 1rem 0 !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        line-height: 1.2 !important;
+      }
+      
+      #menuNavHello .navName p:hover {
+        color: #64ffda !important;
+      }
+      
+      /* Navigation items container */
+      .js {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: transparent !important;
+      }
+      
+      .js > div {
+        flex: 1 !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      /* Navigation links - uniform styling */
+      .navName {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+      }
+      
+      .navName p {
+        color: #E6E0E0 !important;
+        font-size: 1em !important;
+        font-family: "Lato", sans-serif !important;
+        font-weight: 400 !important;
+        margin: 0 !important;
+        padding: 1rem 0.5rem !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+      }
+      
+      .navName p:hover {
+        color: #64ffda !important;
+      }
+      
+      .navName a {
+        color: inherit !important;
+        text-decoration: none !important;
+        display: block !important;
+      }
+      
+      .navName a:hover {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      
+      /* Hide hamburger on desktop */
+      #menuThreeLine {
+        display: none !important;
+      }
+      
+      /* Hamburger menu styling */
+      #nav-icon3 {
+        width: 30px !important;
+        height: 25px !important;
+        position: relative !important;
+        margin: 0 !important;
+        transform: rotate(0deg) !important;
+        transition: .5s ease-in-out !important;
+        cursor: pointer !important;
+      }
+      
+      #nav-icon3 span {
+        display: block !important;
+        position: absolute !important;
+        height: 3px !important;
+        width: 100% !important;
+        background: #E6E0E0 !important;
+        border-radius: 9px !important;
+        opacity: 1 !important;
+        left: 0 !important;
+        transform: rotate(0deg) !important;
+        transition: .25s ease-in-out !important;
+      }
+      
+      #nav-icon3 span:nth-child(1) {
+        top: 0px !important;
+      }
+      
+      #nav-icon3 span:nth-child(2),
+      #nav-icon3 span:nth-child(3) {
+        top: 10px !important;
+      }
+      
+      #nav-icon3 span:nth-child(4) {
+        top: 20px !important;
+      }
+      
+      #nav-icon3.open span:nth-child(1) {
+        top: 10px !important;
+        width: 0% !important;
+        left: 50% !important;
+      }
+      
+      #nav-icon3.open span:nth-child(2) {
+        transform: rotate(45deg) !important;
+      }
+      
+      #nav-icon3.open span:nth-child(3) {
+        transform: rotate(-45deg) !important;
+      }
+      
+      #nav-icon3.open span:nth-child(4) {
+        top: 10px !important;
+        width: 0% !important;
+        left: 50% !important;
+      }
+
+      /* Mobile navigation - show hamburger, hide nav items initially */
+      @media (max-width: 1024px) {
+        #menuThreeLine {
+          display: block !important;
+          cursor: pointer !important;
+        }
+        
+        .js {
+          display: none !important;
+          flex-direction: column !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          right: 0 !important;
+          background-color: #2C423F !important;
+          z-index: 1000 !important;
+          padding: 1rem 0 !important;
+        }
+        
+        .js.show {
+          display: flex !important;
+        }
+        
+        .js > div {
+          margin: 0 !important;
+          padding: 0.5rem 0 !important;
+          text-align: center !important;
+          width: 100% !important;
+        }
+        
+        .navMenu {
+          position: relative !important;
+        }
+        
+        .flexcontainer .col-10 {
+          justify-content: space-between !important;
+          align-items: center !important;
+        }
+        
+        #menuNavHello {
+          flex: 1 !important;
+          margin-right: 1rem !important;
+          display: flex !important;
+          align-items: center !important;
+        }
+        
+        #menuThreeLine {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          height: 100% !important;
+          padding: 0.5rem !important;
+          margin-top: 0.25rem !important;
+        }
+        
+        #nav-icon3 {
+          margin: 0 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          transform: translateY(2px) !important;
+        }
+      }
+      
+      /* Override any original v1 CSS conflicts */
+      .navMenu,
+      .navMenu.sticky {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        bottom: auto !important;
+      }
+      
+      /* Ensure consistent background across all child elements */
+      .navMenu *,
+      .navMenu.sticky * {
+        background-color: transparent !important;
+      }
+      
+      .navMenu,
+      .navMenu.sticky,
+      .navMenu .row,
+      .navMenu.sticky .row,
+      .navMenu .flexcontainer,
+      .navMenu.sticky .flexcontainer {
+        background-color: #2C423F !important;
+      }
+      
+      /* Override any .fix-search styles */
+      .fix-search .navMenu,
+      .fix-search .navMenu.sticky {
+        position: relative !important;
+        bottom: auto !important;
+      }
+      
+      .fix-search .navMenu.sticky {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: auto !important;
+      }
+      
+      /* Mobile responsive */
+      @media (max-width: 1024px) {
+        .flexcontainer {
+          padding: 0 1rem !important;
+        }
+        
+        #menuThreeLine {
+          display: block !important;
+        }
+        
+        .js {
+          display: none !important;
+        }
+        
+        #menuNavHello {
+          flex: 1 !important;
+          margin-right: 1rem !important;
+        }
+        
+        .navMenu.sticky {
+          position: fixed !important;
+          top: 0 !important;
+        }
+      }
+      
+      /* FOOTER STYLING - NO GAPS, FULL WIDTH */
+      .contact {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        background-color: #2C423F !important;
+      }
+      
+      .contact .row {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      
+      .contact .col-12 {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+      }
+      
+      /* Remove empty paragraph gaps */
+      .contact .row .col-12 p:empty {
+        display: none !important;
+      }
+      
+      /* Footer navigation menu */
+      #footerNavMenu {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 2rem 0 !important;
+        background-color: #2C423F !important;
+      }
+      
+      #footerNavMenu .flexcontainer {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 0 2rem !important;
+        margin: 0 !important;
+        background-color: #2C423F !important;
+        flex-wrap: wrap !important;
+      }
+      
+      #footerNavMenu .col-12 {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-wrap: wrap !important;
+      }
+      
+      /* Hide footer hamburger */
+      .footerThreeLine {
+        display: none !important;
+      }
+      
+      #footerNavMenu .col-1 {
+        display: none !important;
+      }
+      
+      /* Social media icons */
+      #footerMobileNav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 2rem 1rem 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      
+      #footerMobileNav a {
+        margin: 0 0.5rem !important;
+        display: inline-block !important;
+      }
+      
+      #footerMobileNav img {
+        width: 40px !important;
+        height: 40px !important;
+        transition: opacity 0.2s ease !important;
+      }
+      
+      #footerMobileNav img:hover {
+        opacity: 0.7 !important;
+      }
+      
+      /* Footer navigation links */
+      .mobileLinks {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex: 1 !important;
+      }
+      
+      .mobileLinks > div {
+        flex: 1 !important;
+        text-align: center !important;
+        margin: 0 1rem !important;
+        padding: 0 !important;
+      }
+      
+      .footerNavName {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .footerNavName p {
+        color: #E6E0E0 !important;
+        font-size: 1em !important;
+        font-family: "Lato", sans-serif !important;
+        font-weight: 400 !important;
+        margin: 0 !important;
+        padding: 0.5rem !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        text-align: center !important;
+      }
+      
+      .footerNavName p:hover {
+        color: #64ffda !important;
+      }
+      
+      .footerNavName a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+      
+      /* Fine print section */
+      .fineprint {
+        text-align: center !important;
+        padding: 1rem 0 2rem 0 !important;
+        margin: 0 !important;
+        background-color: #2C423F !important;
+      }
+      
+      .fineprint p {
+        color: #E6E0E0 !important;
+        font-size: 0.8em !important;
+        font-family: "Lato", sans-serif !important;
+        margin: 0 !important;
+        opacity: 0.7 !important;
+      }
+      
+      /* Mobile responsive footer - IMPROVED STACKING */
+      @media (max-width: 1024px) {
+        #footerNavMenu {
+          padding: 1.5rem 0 !important;
+        }
+        
+        #footerNavMenu .flexcontainer {
+          flex-direction: column !important;
+          padding: 0 1rem !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        #footerNavMenu .col-12 {
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 100% !important;
+        }
+        
+        #footerMobileNav {
+          margin: 0 0 1.5rem 0 !important;
+          order: 1 !important;
+          justify-content: center !important;
+          width: 100% !important;
+        }
+        
+        #footerMobileNav a {
+          margin: 0 0.75rem !important;
+        }
+        
+        .mobileLinks {
+          order: 2 !important;
+          flex-direction: row !important;
+          justify-content: center !important;
+          align-items: center !important;
+          width: 100% !important;
+          flex-wrap: wrap !important;
+          display: flex !important;
+        }
+        
+        .mobileLinks > div {
+          margin: 0.5rem 0.75rem !important;
+          flex: 1 !important;
+          min-width: 0 !important;
+          text-align: center !important;
+        }
+        
+        .footerNavName p {
+          font-size: 0.9em !important;
+          padding: 0.5rem 0.75rem !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        #footerNavMenu {
+          padding: 1rem 0 !important;
+        }
+        
+        #footerMobileNav a {
+          margin: 0 0.5rem !important;
+        }
+        
+        #footerMobileNav img {
+          width: 35px !important;
+          height: 35px !important;
+        }
+        
+        .mobileLinks {
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+        }
+        
+        .mobileLinks > div {
+          margin: 0.25rem 0.5rem !important;
+          flex: 1 1 45% !important;
+          min-width: 120px !important;
+          text-align: center !important;
+        }
+        
+        .footerNavName p {
+          font-size: 0.85em !important;
+          padding: 0.4rem 0.5rem !important;
+        }
+      }
+      
+      /* Archive notice */
+      .archive-notice {
+        background: #2C423F;
+        color: #E6E0E0;
+        padding: 1rem;
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        border-top: 2px solid #829191;
+        margin: 0;
+        width: 100%;
+      }
+      
+      .archive-notice p {
+        margin: 0 0 0.5rem 0;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      
+      .archive-notice .back-link {
+        color: #E6E0E0;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 300;
+        transition: color 0.2s ease;
+      }
+      
+      .archive-notice .back-link:hover {
+        color: #829191;
+        text-decoration: none;
+      }
+      
+      /* ABOUT ME SECTION STYLING - RESTORED ORIGINAL DESIGN */
+      .about {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .profile {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+      }
+      
+      .profile .col-12 {
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0.938em !important;
+      }
+      
+      .profile h1 {
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+        font-size: 2.5em !important;
+        color: #2C423F !important;
+        font-family: "Lato", sans-serif !important;
+      }
+      
+      .profile p {
+        text-align: center !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1rem !important;
+        font-size: 1em !important;
+        color: #2C423F !important;
+        font-family: "Lato", sans-serif !important;
+        padding: 0 2rem !important;
+      }
+      
+      .profile .about-text-v1 {
+        text-align: center !important;
+        line-height: 1.6 !important;
+        font-size: 1em !important;
+        color: #2C423F !important;
+        font-family: "Lato", sans-serif !important;
+        padding: 0 4em !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      /* ARROW STYLING - ALL ARROWS IDENTICAL TO FIRST ARROW */
+      #anchorArrow,
+      #anchorArrow1,
+      #anchorArrow2,
+      #anchorArrow3 {
+        text-align: center !important;
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      /* First arrow - same color as Hello, I'm Steve */
+      #anchorArrow p {
+        font-size: 2em !important;
+        color: #E6E0E0 !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        margin: 0 !important;
+        padding: 0.5rem !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Other arrows - keep dark color */
+      #anchorArrow1 p,
+      #anchorArrow2 p,
+      #anchorArrow3 p,
+      .arrow,
+      p.arrow {
+        font-size: 2em !important;
+        color: #2C423F !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        margin: 0 !important;
+        padding: 0.5rem !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+      }
+      
+      /* Remove any conflicting arrow class styling */
+      .arrow {
+        font-size: 2em !important;
+        color: #2C423F !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease !important;
+        margin: 0 !important;
+        padding: 0.5rem !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+      }
+      
+      /* ALL arrow links - consistent styling */
+      #anchorArrow a,
+      #anchorArrow1 a,
+      #anchorArrow2 a,
+      #anchorArrow3 a,
+      .anchorLink {
+        text-decoration: none !important;
+        color: inherit !important;
+        display: inline-block !important;
+      }
+      
+      /* Hover effects - ALL arrows same as first */
+      #anchorArrow p:hover,
+      #anchorArrow1 p:hover,
+      #anchorArrow2 p:hover,
+      #anchorArrow3 p:hover,
+      .arrow:hover,
+      p.arrow:hover,
+      #anchorArrow a:hover p,
+      #anchorArrow1 a:hover p,
+      #anchorArrow2 a:hover p,
+      #anchorArrow3 a:hover p,
+      .anchorLink:hover p {
+        color: #64ffda !important;
+      }
+
+      /* PROFESSIONAL EXPERIENCE SPACING - NO BORDERS */
+      .smalljob {
+        margin-bottom: 2rem !important;
+        padding-bottom: 1rem !important;
+      }
+      
+      .smalljob:last-child {
+        margin-bottom: 0 !important;
+      }
+      
+      .experience .smalljob {
+        padding-bottom: 1.5rem !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      .experience .smalljob:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* Ensure content flows properly */
+      .work, .projects, .contact {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .background {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .background1 {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      
+      .content {
+        margin: 2.125em 3.125em 4.125em 3.125em;
+      }
+      
+      @media (max-width: 1024px) {
+        .content {
+          margin: 2rem 1rem;
+        }
+        
+        .profile {
+          width: 100% !important;
+          padding: 0 !important;
+        }
+        
+        .profile .col-12 {
+          padding: 0.5rem !important;
+        }
+        
+        .profile h1 {
+          font-size: 2em !important;
+        }
+        
+        .profile p {
+          font-size: 0.9em !important;
+          padding: 0 1rem !important;
+        }
+        
+        .profile .about-text-v1 {
+          padding: 0 2em !important;
+          font-size: 0.9em !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .profile .about-text-v1 {
+          padding: 0 1em !important;
+          font-size: 0.85em !important;
+        }
+        
+        .profile p {
+          padding: 0 0.5rem !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <%= yield %>
+    
+    <!-- V1 Archive javascripts -->
+    <script src="/archive/v1/javascripts/homepage.js"></script>
+    
+    <!-- Sticky Navigation with Footer Detection and Mobile Menu -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navMenu = document.querySelector('.navMenu');
+        const aboutSection = document.querySelector('#aboutAnchor');
+        const footerMenu = document.querySelector('#footerNavMenu');
+        
+        if (!navMenu || !aboutSection) {
+          console.log('Navigation elements not found');
+          return;
+        }
+        
+        let navOffset = aboutSection.offsetTop;
+        
+        function handleScroll() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const windowHeight = window.innerHeight;
+          
+          // Check if we should show sticky nav (past about section)
+          const shouldBeSticky = scrollTop >= navOffset - 50;
+          
+          // Check if footer is visible
+          let footerVisible = false;
+          if (footerMenu) {
+            const footerTop = footerMenu.offsetTop;
+            const footerInView = scrollTop + windowHeight >= footerTop;
+            footerVisible = footerInView;
+          }
+          
+          // Show sticky nav only if we're past about section AND footer is not visible
+          if (shouldBeSticky && !footerVisible) {
+            navMenu.classList.add('sticky');
+          } else {
+            navMenu.classList.remove('sticky');
+          }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', function() {
+          // Recalculate offsets on resize
+          navOffset = aboutSection.offsetTop;
+          handleScroll();
+        });
+        
+        // Initial check
+        handleScroll();
+        
+        // Mobile hamburger menu functionality
+        const hamburger = document.getElementById('nav-icon3');
+        const mobileNav = document.querySelector('.js');
+        
+        if (hamburger && mobileNav) {
+          hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('show');
+          });
+          
+          // Close menu when clicking on navigation links
+          const navLinks = mobileNav.querySelectorAll('a');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              hamburger.classList.remove('open');
+              mobileNav.classList.remove('show');
+            });
+          });
+          
+          // Close menu when clicking outside
+          document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target)) {
+              hamburger.classList.remove('open');
+              mobileNav.classList.remove('show');
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

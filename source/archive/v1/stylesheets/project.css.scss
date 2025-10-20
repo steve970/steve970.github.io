@@ -1,0 +1,35 @@
+.github {
+  width: 1.5625em;
+  margin-right: .5em;
+}
+
+.npm {
+  width: 2em;
+}
+
+.showcase {
+  position: relative;
+  margin-top: 1.25em;
+  background-color: #ffffff;
+  height: 40em;
+  overflow: hidden;
+  padding: 0;
+}
+
+.img {
+  position: absolute;
+}
+
+.live-site {
+  margin-top: 1.25em;
+}
+
+@media (max-width: 425px) {
+  .showcase {
+    display: none;
+  }
+
+  .projectsDescription {
+    width: 100%;
+  }
+}

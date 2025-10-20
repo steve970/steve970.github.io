@@ -1,0 +1,1111 @@
+// V2.0 Modern Portfolio - Two Column Layout with Brittany Chiang Navigation
+// Color Variables
+$navy: #0a192f;
+$light-navy: #112240;
+$lightest-navy: #233554;
+$navy-shadow: rgba(2, 12, 27, 0.7);
+$dark-slate: #495670;
+$slate: #8892b0;
+$light-slate: #a8b2d1;
+$lightest-slate: #ccd6f6;
+$white: #e6f1ff;
+$green: #64ffda;
+$green-tint: rgba(100, 255, 218, 0.1);
+
+// Typography
+$font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+$font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+
+// Base Styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: $navy;
+  color: $slate;
+  font-family: $font-sans;
+  font-size: 20px;
+  line-height: 1.3;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  // Mobile-specific optimizations
+  @media (max-width: 1024px) {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+// Two Column Layout
+.portfolio-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-column {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+  @media (max-width: 1024px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 50px;
+  }
+}
+
+.right-column {
+  margin-left: 50%;
+  width: 50%;
+  padding: 100px 50px;
+  
+  @media (max-width: 1024px) {
+    margin-left: 0;
+    width: 100%;
+    padding: 50px;
+  }
+}
+
+// Hero Content
+.hero-content {
+  margin-bottom: 50px;
+  
+  .intro {
+    margin: 0 0 30px 4px;
+    color: $green;
+    font-family: $font-mono;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .name {
+    margin: 0;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    color: $lightest-slate;
+    line-height: 1.1;
+  }
+  
+  .tagline {
+    margin: 10px 0 0;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 600;
+    color: $slate;
+    line-height: 0.9;
+  }
+  
+  .description {
+    margin: 20px 0 0;
+    max-width: 540px;
+    color: $slate;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 1.25rem 1.75rem;
+    color: $green;
+    background-color: transparent;
+    border: 1px solid $green;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: $font-mono;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    min-height: 44px; // iOS touch target minimum
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $green-tint;
+      outline: none;
+    }
+    
+    // Mobile touch feedback
+    @media (max-width: 1024px) {
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+}
+
+// Navigation - Brittany Chiang Style
+.main-nav {
+  margin-bottom: 50px;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 15px;
+      
+      .nav-link {
+        display: inline-block;
+        padding: 10px 0;
+        color: $slate;
+        text-decoration: none;
+        font-family: $font-mono;
+        font-size: 14px;
+        transition: all 0.25s ease;
+        min-height: 44px; // Touch target minimum
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        
+        &:hover,
+        &:focus,
+        &:active {
+          color: $green;
+          transform: translateX(5px);
+          outline: none;
+        }
+        
+        // Mobile touch feedback
+        @media (max-width: 1024px) {
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Social Links
+.left-column .social-links {
+  display: flex;
+  gap: 20px;
+  
+  .social-link {
+    color: $light-slate;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    
+    &:hover {
+      color: $green;
+      transform: translateY(-3px);
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Right Column Sections
+.section {
+  margin-bottom: 100px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 40px;
+  font-size: 32px;
+  font-weight: 600;
+  color: $lightest-slate;
+  
+  &:after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: $lightest-navy;
+  }
+}
+
+.section-content {
+  color: $slate;
+  
+  p {
+    margin-bottom: 15px;
+  }
+  
+  a {
+    color: $green;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Tech List
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+  
+  li {
+    position: relative;
+    padding-left: 20px;
+    font-family: $font-mono;
+    font-size: 13px;
+    
+    &:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: $green;
+    }
+  }
+}
+
+// Job Styles
+.job {
+  margin-bottom: 40px;
+  
+  .job-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 500;
+    color: $lightest-slate;
+  }
+  
+  .job-company {
+    margin-bottom: 5px;
+    color: $green;
+    font-size: 18px;
+  }
+  
+  .job-date {
+    margin-bottom: 20px;
+    color: $light-slate;
+    font-family: $font-mono;
+    font-size: 13px;
+  }
+  
+  .job-details {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      
+      &:before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: $green;
+      }
+    }
+  }
+}
+
+// Project Grid
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: $light-navy;
+  border-radius: 4px;
+  padding: 30px;
+  transition: all 0.25s ease;
+  
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 30px -15px $navy-shadow;
+  }
+}
+
+.project-content {
+  .project-overline {
+    margin: 0 0 10px;
+    color: $green;
+    font-family: $font-mono;
+    font-size: 13px;
+  }
+  
+  .project-title {
+    margin: 0 0 15px;
+    color: $lightest-slate;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .project-description {
+    margin-bottom: 20px;
+    color: $light-slate;
+  }
+  
+  .project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 0 20px;
+    list-style: none;
+    
+    li {
+      margin: 0 20px 5px 0;
+      color: $light-slate;
+      font-family: $font-mono;
+      font-size: 13px;
+    }
+  }
+  
+  .project-links {
+    .project-link {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      color: $green;
+      background-color: transparent;
+      border: 1px solid $green;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: $font-mono;
+      font-size: 13px;
+      transition: all 0.25s ease;
+      
+      &:hover {
+        background-color: $green-tint;
+      }
+    }
+  }
+}
+
+// Contact Section
+#contact {
+  text-align: center;
+  
+  .contact-title {
+    font-size: clamp(40px, 5vw, 60px);
+    margin-bottom: 20px;
+    color: $lightest-slate;
+  }
+  
+  .contact-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 1.25rem 1.75rem;
+    color: $green;
+    background-color: transparent;
+    border: 1px solid $green;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: $font-mono;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    
+    &:hover {
+      background-color: $green-tint;
+    }
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: $lightest-slate;
+  line-height: 1.1;
+}
+
+// COMPREHENSIVE MOBILE OPTIMIZATION
+@media (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  
+  .portfolio-app {
+    flex-direction: column;
+  }
+  
+  .left-column {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 50px 25px;
+    text-align: center;
+  }
+  
+  .right-column {
+    margin-left: 0;
+    width: 100%;
+    padding: 25px;
+  }
+  
+  // Hero Mobile Optimization
+  .hero-content {
+    margin-bottom: 30px;
+    text-align: center;
+    
+    .intro {
+      font-size: 14px;
+      margin: 0 0 20px;
+    }
+    
+    .name {
+      font-size: clamp(32px, 8vw, 50px);
+    }
+    
+    .tagline {
+      font-size: clamp(28px, 7vw, 45px);
+    }
+    
+    .description {
+      max-width: 100%;
+      margin: 15px auto 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .cta-button {
+      margin-top: 30px;
+      padding: 1rem 1.5rem;
+      font-size: 13px;
+    }
+  }
+  
+  // Navigation Mobile
+  .main-nav {
+    margin-bottom: 30px;
+    
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      
+      li {
+        margin-bottom: 0;
+        
+        .nav-link {
+          padding: 8px 12px;
+          font-size: 13px;
+          border: 1px solid $lightest-navy;
+          border-radius: 4px;
+          
+          &:hover {
+            transform: none;
+            background-color: $green-tint;
+          }
+        }
+      }
+    }
+  }
+  
+  // Social Links Mobile
+  .left-column .social-links {
+    justify-content: center;
+    gap: 25px;
+    
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  // Section Titles Mobile
+  .section-title {
+    font-size: 24px;
+    text-align: center;
+    flex-direction: column;
+    
+    &:after {
+      width: 100px;
+      margin: 10px auto 0;
+    }
+  }
+  
+  // Tech List Mobile
+  .tech-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    
+    li {
+      font-size: 14px;
+    }
+  }
+  
+  // Job Styles Mobile
+  .job {
+    .job-title {
+      font-size: 20px;
+    }
+    
+    .job-company {
+      font-size: 16px;
+    }
+    
+    .job-date {
+      font-size: 12px;
+    }
+  }
+  
+  // Project Grid Mobile
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .project-card {
+    padding: 20px;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  .project-content {
+    .project-title {
+      font-size: 20px;
+    }
+    
+    .project-tech-list {
+      li {
+        margin: 0 15px 5px 0;
+        font-size: 12px;
+      }
+    }
+  }
+  
+  // Contact Mobile
+  #contact {
+    .contact-title {
+      font-size: clamp(28px, 6vw, 40px);
+    }
+    
+    .contact-button {
+      padding: 1rem 1.5rem;
+      font-size: 13px;
+    }
+  }
+  
+  // Arrow Button Mobile
+  .arrow-button {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+// EXTRA SMALL MOBILE (phones in portrait)
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  
+  .left-column,
+  .right-column {
+    padding: 20px 15px;
+  }
+  
+  .hero-content {
+    .name {
+      font-size: clamp(28px, 8vw, 40px);
+    }
+    
+    .tagline {
+      font-size: clamp(24px, 7vw, 35px);
+    }
+    
+    .description {
+      font-size: 15px;
+    }
+    
+    .cta-button {
+      padding: 0.875rem 1.25rem;
+      font-size: 12px;
+    }
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+    .nav-link {
+      padding: 10px 20px;
+      width: 200px;
+      text-align: center;
+    }
+  }
+  
+  .section-title {
+    font-size: 20px;
+    
+    &:after {
+      width: 80px;
+    }
+  }
+  
+  .project-card {
+    padding: 15px;
+  }
+  
+  .project-content {
+    .project-title {
+      font-size: 18px;
+    }
+    
+    .project-tech-list li {
+      margin: 0 10px 5px 0;
+      font-size: 11px;
+    }
+  }
+}
+// Arrow Bu
+tton Styles
+.section-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.arrow-button {
+  background: none;
+  border: 2px solid $slate;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $slate;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+  &:hover {
+    border-color: $green;
+    color: $green;
+    transform: translateY(-3px);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: $green;
+    color: $green;
+  }
+  
+  svg {
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  &:hover svg {
+    transform: translateY(2px);
+  }
+}// MOBILE
+ HAMBURGER MENU
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  color: $slate;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  
+  &:hover,
+  &:focus {
+    color: $green;
+    background-color: $green-tint;
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 25, 47, 0.95);
+  z-index: 999;
+  
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-nav-menu {
+    text-align: center;
+    
+    .nav-link {
+      display: block;
+      padding: 20px;
+      color: $lightest-slate;
+      text-decoration: none;
+      font-family: $font-mono;
+      font-size: 18px;
+      margin-bottom: 10px;
+      border: 1px solid $lightest-navy;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      
+      &:hover,
+      &:focus {
+        color: $green;
+        background-color: $green-tint;
+        transform: none;
+      }
+    }
+  }
+}
+
+// MOBILE SCROLL IMPROVEMENTS
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+  
+  // Smooth scrolling for mobile
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  // Prevent horizontal scroll
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  // Improve tap targets
+  a, button, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  // Better focus states for accessibility
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid $green;
+    outline-offset: 2px;
+  }
+}
+
+// MOBILE PERFORMANCE OPTIMIZATIONS
+@media (max-width: 1024px) {
+  // Reduce animations on mobile for better performance
+  .project-card {
+    &:hover {
+      transform: none;
+      box-shadow: 0 10px 20px -10px $navy-shadow;
+    }
+  }
+  
+  // Optimize images for mobile
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // Better text rendering on mobile
+  h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+// MOBILE LANDSCAPE ORIENTATION
+@media (max-width: 1024px) and (orientation: landscape) {
+  .left-column {
+    padding: 30px 25px;
+  }
+  
+  .hero-content {
+    .name,
+    .tagline {
+      font-size: clamp(24px, 6vw, 40px);
+    }
+  }
+}
+
+// MOBILE ACCESSIBILITY IMPROVEMENTS
+@media (max-width: 1024px) {
+  // Larger touch targets for better accessibility
+  .social-link {
+    padding: 10px;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  // Better contrast for mobile screens
+  .section-content {
+    color: $light-slate;
+  }
+  
+  // Improved spacing for readability
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+}// MOBILE 
+FLOATING NAVIGATION SOLUTION
+.floating-nav-trigger {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: $green;
+  border: none;
+  border-radius: 50%;
+  color: $navy;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  // Show only on mobile when scrolled
+  &.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// FLOATING NAVIGATION MENU
+.floating-nav-menu {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: $light-navy;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(2, 12, 27, 0.8);
+  z-index: 1000;
+  min-width: 200px;
+  
+  &.active {
+    display: block;
+    animation: slideUp 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .floating-nav-item {
+    display: block;
+    padding: 12px 16px;
+    color: $light-slate;
+    text-decoration: none;
+    font-family: $font-mono;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    margin-bottom: 4px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &:hover,
+    &:focus {
+      background-color: $green-tint;
+      color: $green;
+      outline: none;
+    }
+  }
+}
+
+// BACK TO TOP BUTTON (Alternative/Additional Option)
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  background-color: $light-navy;
+  border: 1px solid $lightest-navy;
+  border-radius: 50%;
+  color: $light-slate;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  
+  &:hover {
+    background-color: $green-tint;
+    border-color: $green;
+    color: $green;
+    transform: translateY(-2px);
+  }
+  
+  &.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 1024px) {
+    opacity: 0;
+    visibility: hidden;
+    
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// STICKY MINI NAVIGATION BAR (Alternative Option)
+.sticky-mini-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  z-index: 999;
+  border-bottom: 1px solid $lightest-navy;
+  
+  &.visible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .mini-nav-brand {
+    color: $green;
+    font-family: $font-mono;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .mini-nav-links {
+    display: flex;
+    gap: 20px;
+    
+    .mini-nav-link {
+      color: $light-slate;
+      text-decoration: none;
+      font-family: $font-mono;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      
+      &:hover,
+      &:focus {
+        background-color: $green-tint;
+        color: $green;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mini-nav-links {
+      display: none;
+    }
+  }
+}
+
+// ANIMATIONS
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// MOBILE NAVIGATION IMPROVEMENTS
+@media (max-width: 1024px) {
+  // Ensure floating elements don't interfere with content
+  body {
+    padding-bottom: 80px; // Space for floating nav
+  }
+  
+  // Improve scroll behavior
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+  }
+  
+  // Better section spacing for navigation
+  .section {
+    scroll-margin-top: 60px;
+  }
+}
