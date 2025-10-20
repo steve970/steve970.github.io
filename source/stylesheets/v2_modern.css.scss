@@ -154,6 +154,7 @@ body {
 // Navigation - Brittany Chiang Style
 .main-nav {
   margin-bottom: 50px;
+  margin-left: 4px; // Align with hero content
   
   ul {
     list-style: none;
@@ -199,6 +200,7 @@ body {
 .left-column .social-links {
   display: flex;
   gap: 20px;
+  margin-left: 4px; // Align with hero content
   
   .social-link {
     color: $light-slate;
